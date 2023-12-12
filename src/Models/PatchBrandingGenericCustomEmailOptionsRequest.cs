@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using MonoCloud.SDK.Core.Helpers;
+using System.Text.Json.Serialization;
+
+namespace MonoCloud.SDK.Admin.Models;
+
+/// <summary>
+/// The Patch Generic Branding Custom Email Options Request class
+/// </summary>
+[JsonConverter(typeof(PatchConverter<PatchBrandingGenericCustomEmailOptionsRequest>))]
+public class PatchBrandingGenericCustomEmailOptionsRequest
+{
+   /// <summary>
+   /// Specifies whether to use the custom template.
+   /// </summary>
+   public Optional<bool> UseCustomTemplate { get; set; }
+
+   /// <summary>
+   /// Specifies the text to be used as the email subject
+   /// </summary>
+   public Optional<string?> Subject { get; set; }
+
+   /// <summary>
+   /// Specifies the URI for the custom template to be used
+   /// </summary>
+   public Optional<string?> TemplateUri { get; set; }
+}
+
+
