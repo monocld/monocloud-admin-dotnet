@@ -22,7 +22,7 @@ public static class MonoCloudAdminServiceExtensions
 
     if (configuration is not null)
     {
-      var monocloudSection = configuration.GetSection("MonoCloud");
+      var monocloudSection = configuration.GetSection("MonoCloud").GetSection("Admin");
       domain = monocloudSection["Domain"];
       apiKey = monocloudSection["ApiKey"];
 

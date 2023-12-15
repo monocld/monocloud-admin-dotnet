@@ -39,7 +39,7 @@ public class PatchAuthenticatorsDiscordOptionsRequest
    /// <summary>
    /// List of provider scopes to be obtained
    /// </summary>
-   public Optional<List<string>?> Scopes { get; set; }
+   public Optional<List<string>> Scopes { get; set; }
 
    /// <summary>
    /// Specifies if we should trust the email verified scope received from the external provider.

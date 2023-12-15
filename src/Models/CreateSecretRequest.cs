@@ -16,17 +16,17 @@ public class CreateSecretRequest
    /// <summary>
    /// The secret
    /// </summary>
-   public string Value { get; set; } = string.Empty;
+   public string Value { get; set; }
 
    /// <summary>
    /// The expiration date of the secret (in Epoch)
    /// </summary>
-   public long? Expiration { get; set; }
+   public DateTime? Expiration { get; set; }
 
    /// <summary>
    /// Specifies type of secret
    /// </summary>
-   public SecretTypes Type { get; set; } = default;
+   public SecretTypes? Type { get; set; }
 }
 
 

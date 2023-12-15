@@ -36,7 +36,7 @@ public class LogSummary
    /// <summary>
    /// Specifies the event time (in Epoch).
    /// </summary>
-   public long TimeStamp { get; set; }
+   public DateTime TimeStamp { get; set; }
 
    /// <summary>
    /// The client Id.

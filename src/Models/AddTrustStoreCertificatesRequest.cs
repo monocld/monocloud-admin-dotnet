@@ -11,7 +11,7 @@ public class AddTrustStoreCertificatesRequest
    /// <summary>
    /// List of certificates.
    /// </summary>
-   public List<CreateTrustStoreCertificateRequest> Certificates { get; set; } = new();
+   public List<CreateTrustStoreCertificateRequest> Certificates { get; set; }
 }
 
 

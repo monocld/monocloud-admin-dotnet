@@ -46,27 +46,27 @@ public class KeyMaterial
    /// <summary>
    /// Specifies the creation time of the key (in Epoch).
    /// </summary>
-   public long CreationTime { get; set; }
+   public DateTime CreationTime { get; set; }
 
    /// <summary>
    /// Specifies the time ( in Epoch ) from which the key is valid.
    /// </summary>
-   public long ValidFrom { get; set; }
+   public DateTime ValidFrom { get; set; }
 
    /// <summary>
    /// Specifies the time ( in Epoch ) upto which the key is valid.
    /// </summary>
-   public long? ValidTo { get; set; }
+   public DateTime? ValidTo { get; set; }
 
    /// <summary>
    /// Specifies the revocation time of the key ( in Epoch ).
    /// </summary>
-   public long? RevocationDate { get; set; }
+   public DateTime? RevocationDate { get; set; }
 
    /// <summary>
    /// Specifies the time ( in Epoch ) at which the key was rotated.
    /// </summary>
-   public long? RotationDate { get; set; }
+   public DateTime? RotationDate { get; set; }
 }
 
 

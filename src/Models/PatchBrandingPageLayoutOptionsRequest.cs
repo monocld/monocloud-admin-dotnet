@@ -69,7 +69,7 @@ public class PatchBrandingPageLayoutOptionsRequest
    /// <summary>
    /// Specifies the box-shadow of the card
    /// </summary>
-   public Optional<PatchBrandingGenericPageShadowOptionsRequest?> CardShadow { get; set; }
+   public Optional<PatchBrandingGenericPageShadowOptionsRequest> CardShadow { get; set; }
 }
 
 

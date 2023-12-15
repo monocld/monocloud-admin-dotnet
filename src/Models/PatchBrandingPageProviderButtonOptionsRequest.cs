@@ -29,7 +29,7 @@ public class PatchBrandingPageProviderButtonOptionsRequest
    /// <summary>
    /// Specifies the box-shadow of the login provider buttons
    /// </summary>
-   public Optional<PatchBrandingGenericPageShadowOptionsRequest?> Shadow { get; set; }
+   public Optional<PatchBrandingGenericPageShadowOptionsRequest> Shadow { get; set; }
 
    /// <summary>
    /// Specifies the background of the login provider buttons
@@ -59,7 +59,7 @@ public class PatchBrandingPageProviderButtonOptionsRequest
    /// <summary>
    /// Specifies the box-shadow of the login provider buttons when in the hover state
    /// </summary>
-   public Optional<PatchBrandingGenericPageShadowOptionsRequest?> HoverShadow { get; set; }
+   public Optional<PatchBrandingGenericPageShadowOptionsRequest> HoverShadow { get; set; }
 
    /// <summary>
    /// Specifies the background of the login provider buttons when in the hover state

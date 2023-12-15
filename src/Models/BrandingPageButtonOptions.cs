@@ -36,7 +36,7 @@ public class BrandingPageButtonOptions
    /// <summary>
    /// Specifies the box-shadow of the button
    /// </summary>
-   public BrandingGenericPageShadowOptions? Shadow { get; set; }
+   public BrandingGenericPageShadowOptions Shadow { get; set; }
 
    /// <summary>
    /// Specifies the background of the button
@@ -61,7 +61,7 @@ public class BrandingPageButtonOptions
    /// <summary>
    /// Specifies the box-shadow of the button when it is in the hover state
    /// </summary>
-   public BrandingGenericPageShadowOptions? HoverShadow { get; set; }
+   public BrandingGenericPageShadowOptions HoverShadow { get; set; }
 
    /// <summary>
    /// Specifies the background of the button when it is in the hover state
@@ -86,7 +86,7 @@ public class BrandingPageButtonOptions
    /// <summary>
    /// Specifies the box-shadow of the outline type button
    /// </summary>
-   public BrandingGenericPageShadowOptions? OutlineShadow { get; set; }
+   public BrandingGenericPageShadowOptions OutlineShadow { get; set; }
 
    /// <summary>
    /// Specifies the color (in Hex) of the text contained in the outline type button
@@ -106,7 +106,7 @@ public class BrandingPageButtonOptions
    /// <summary>
    /// Specifies the box-shadow of the outline type button when it is in the hover state
    /// </summary>
-   public BrandingGenericPageShadowOptions? OutlineHoverShadow { get; set; }
+   public BrandingGenericPageShadowOptions OutlineHoverShadow { get; set; }
 
    /// <summary>
    /// Specifies the color (in Hex) of the text contained in the outline type button when it is in the hover state

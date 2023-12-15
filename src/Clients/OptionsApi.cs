@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Web;
 using MonoCloud.SDK.Core.Base;
 using MonoCloud.SDK.Core.Exception;
+using MonoCloud.SDK.Core.Helpers;
 using MonoCloud.SDK.Admin.Models;
 
 namespace MonoCloud.SDK.Admin.Clients;
@@ -43,7 +44,7 @@ public class OptionsClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>AuthenticationOptions</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<AuthenticationOptions>> FindAuthenticationOptions(CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<AuthenticationOptions>> FindAuthenticationOptionsAsync(CancellationToken cancellationToken = default)
   { 
     var urlBuilder = new StringBuilder();
     urlBuilder.Append("options/authentication?");
@@ -70,7 +71,7 @@ public class OptionsClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>AuthenticationOptions</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<AuthenticationOptions>> PatchAuthenticationOptions(PatchAuthenticationOptionsRequest patchAuthenticationOptionsRequest, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<AuthenticationOptions>> PatchAuthenticationOptionsAsync(PatchAuthenticationOptionsRequest patchAuthenticationOptionsRequest, CancellationToken cancellationToken = default)
   { 
     if (patchAuthenticationOptionsRequest == null)
     {
@@ -102,7 +103,7 @@ public class OptionsClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>BrandingOptions</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<BrandingOptions>> FindBrandingOptions(CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<BrandingOptions>> FindBrandingOptionsAsync(CancellationToken cancellationToken = default)
   { 
     var urlBuilder = new StringBuilder();
     urlBuilder.Append("options/branding?");
@@ -129,7 +130,7 @@ public class OptionsClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>BrandingOptions</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<BrandingOptions>> PatchBrandingOptions(PatchBrandingOptionsRequest patchBrandingOptionsRequest, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<BrandingOptions>> PatchBrandingOptionsAsync(PatchBrandingOptionsRequest patchBrandingOptionsRequest, CancellationToken cancellationToken = default)
   { 
     if (patchBrandingOptionsRequest == null)
     {
@@ -161,7 +162,7 @@ public class OptionsClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>CommunicationOptions</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<CommunicationOptions>> FindCommunicationOptions(CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<CommunicationOptions>> FindCommunicationOptionsAsync(CancellationToken cancellationToken = default)
   { 
     var urlBuilder = new StringBuilder();
     urlBuilder.Append("options/communication?");
@@ -188,7 +189,7 @@ public class OptionsClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>CommunicationOptions</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<CommunicationOptions>> PatchCommunicationOptions(PatchCommunicationOptionsRequest patchCommunicationOptionsRequest, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<CommunicationOptions>> PatchCommunicationOptionsAsync(PatchCommunicationOptionsRequest patchCommunicationOptionsRequest, CancellationToken cancellationToken = default)
   { 
     if (patchCommunicationOptionsRequest == null)
     {
@@ -220,7 +221,7 @@ public class OptionsClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>MtlsOptions</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<MtlsOptions>> FindMtlsOptions(CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<MtlsOptions>> FindMtlsOptionsAsync(CancellationToken cancellationToken = default)
   { 
     var urlBuilder = new StringBuilder();
     urlBuilder.Append("options/mtls?");
@@ -247,7 +248,7 @@ public class OptionsClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>MtlsOptions</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<MtlsOptions>> PatchMtlsOptions(PatchMtlsOptionsRequest patchMtlsOptionsRequest, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<MtlsOptions>> PatchMtlsOptionsAsync(PatchMtlsOptionsRequest patchMtlsOptionsRequest, CancellationToken cancellationToken = default)
   { 
     if (patchMtlsOptionsRequest == null)
     {

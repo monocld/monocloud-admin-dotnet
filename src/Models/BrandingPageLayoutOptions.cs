@@ -66,7 +66,7 @@ public class BrandingPageLayoutOptions
    /// <summary>
    /// Specifies the box-shadow of the card
    /// </summary>
-   public BrandingGenericPageShadowOptions? CardShadow { get; set; }
+   public BrandingGenericPageShadowOptions CardShadow { get; set; }
 }
 
 

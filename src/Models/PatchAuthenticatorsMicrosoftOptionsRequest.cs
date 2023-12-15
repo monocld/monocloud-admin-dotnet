@@ -39,7 +39,7 @@ public class PatchAuthenticatorsMicrosoftOptionsRequest
    /// <summary>
    /// List of provider scopes to be obtained
    /// </summary>
-   public Optional<List<string>?> Scopes { get; set; }
+   public Optional<List<string>> Scopes { get; set; }
 
    /// <summary>
    /// Specifies if we should treat the email received from the external provider as verified.

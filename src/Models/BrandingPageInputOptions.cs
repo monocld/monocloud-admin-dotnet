@@ -41,7 +41,7 @@ public class BrandingPageInputOptions
    /// <summary>
    /// Specifies the box-shadow of the input box
    /// </summary>
-   public BrandingGenericPageShadowOptions? Shadow { get; set; }
+   public BrandingGenericPageShadowOptions Shadow { get; set; }
 
    /// <summary>
    /// Specifies the border color (in Hex) of the input box
@@ -56,7 +56,7 @@ public class BrandingPageInputOptions
    /// <summary>
    /// Specifies the box-shadow of the input box when it is in the focused state
    /// </summary>
-   public BrandingGenericPageShadowOptions? FocusShadow { get; set; }
+   public BrandingGenericPageShadowOptions FocusShadow { get; set; }
 
    /// <summary>
    /// Specifies the text color (in Hex) of the input box when it is in the focused state
@@ -76,12 +76,12 @@ public class BrandingPageInputOptions
    /// <summary>
    /// Specifies the box-shadow of the input box when it is in the error state
    /// </summary>
-   public BrandingGenericPageShadowOptions? ErrorShadow { get; set; }
+   public BrandingGenericPageShadowOptions ErrorShadow { get; set; }
 
    /// <summary>
    /// Specifies the box-shadow of the input when it is in the error and focused state
    /// </summary>
-   public BrandingGenericPageShadowOptions? ErrorFocusShadow { get; set; }
+   public BrandingGenericPageShadowOptions ErrorFocusShadow { get; set; }
 }
 
 

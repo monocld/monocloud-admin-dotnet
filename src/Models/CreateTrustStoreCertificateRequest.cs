@@ -11,12 +11,12 @@ public class CreateTrustStoreCertificateRequest
    /// <summary>
    /// Specifies if the certificate is enabled.
    /// </summary>
-   public bool Enabled { get; set; }
+   public bool? Enabled { get; set; }
 
    /// <summary>
    /// Certificate Value.
    /// </summary>
-   public string Value { get; set; } = string.Empty;
+   public string Value { get; set; }
 }
 
 

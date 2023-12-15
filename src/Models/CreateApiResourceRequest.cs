@@ -11,7 +11,7 @@ public class CreateApiResourceRequest
    /// <summary>
    /// Specifies if the resource is enabled.
    /// </summary>
-   public bool Enabled { get; set; } = true;
+   public bool? Enabled { get; set; }
 
    /// <summary>
    /// Display Name for the Resource
@@ -26,27 +26,27 @@ public class CreateApiResourceRequest
    /// <summary>
    /// Specifies whether this resource is shown in the discovery document.
    /// </summary>
-   public bool ShowInDiscoveryDocument { get; set; } = true;
+   public bool? ShowInDiscoveryDocument { get; set; }
 
    /// <summary>
    /// The audience that will be added to the outgoing access token.
    /// </summary>
-   public string Audience { get; set; } = string.Empty;
+   public string Audience { get; set; }
 
    /// <summary>
    /// The Api secret is used for the introspection endpoint. The API can authenticate with introspection using the API name and secret.
    /// </summary>
-   public List<CreateSecretRequest> ApiSecrets { get; set; } = new();
+   public List<CreateSecretRequest> ApiSecrets { get; set; }
 
    /// <summary>
    /// List of API scope names.
    /// </summary>
-   public List<string> Scopes { get; set; } = new();
+   public List<string> Scopes { get; set; }
 
    /// <summary>
    /// List of associated user claim types that should be included in the Access token.
    /// </summary>
-   public List<string> UserClaims { get; set; } = new();
+   public List<string> UserClaims { get; set; }
 }
 
 

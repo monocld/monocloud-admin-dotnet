@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Web;
 using MonoCloud.SDK.Core.Base;
 using MonoCloud.SDK.Core.Exception;
+using MonoCloud.SDK.Core.Helpers;
 using MonoCloud.SDK.Admin.Models;
 
 namespace MonoCloud.SDK.Admin.Clients;
@@ -43,7 +44,7 @@ public class TrustStoreClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>TrustStore</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<TrustStore>> GetTrustStore(CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<TrustStore>> GetTrustStoreAsync(CancellationToken cancellationToken = default)
   { 
     var urlBuilder = new StringBuilder();
     urlBuilder.Append("truststore?");
@@ -64,39 +65,13 @@ public class TrustStoreClient : MonoCloudClientBase
   }
 
   /// <summary>
-  /// Get Truststore Chains
-  /// </summary>
-  /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
-  /// <returns>TrustStoreParsed</returns>
-  /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<TrustStoreParsed>> GetTrustStoreChains(CancellationToken cancellationToken = default)
-  { 
-    var urlBuilder = new StringBuilder();
-    urlBuilder.Append("truststore/chains?");
-
-    urlBuilder.Length--;
-
-    var request = new HttpRequestMessage
-    {
-      Method = new HttpMethod("GET"),
-      RequestUri = new Uri(urlBuilder.ToString(), UriKind.RelativeOrAbsolute),
-      Headers =
-      {
-        { "Accept", "application/json" }
-      }
-    };
-
-    return ProcessRequestAsync<TrustStoreParsed>(request, cancellationToken);
-  }
-
-  /// <summary>
   /// Add Certificates to truststore
   /// </summary>
   /// <param name="addTrustStoreCertificatesRequest">Request Body</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>TrustStore</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<TrustStore>> AddCertificates(AddTrustStoreCertificatesRequest addTrustStoreCertificatesRequest, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<TrustStore>> AddCertificatesAsync(AddTrustStoreCertificatesRequest addTrustStoreCertificatesRequest, CancellationToken cancellationToken = default)
   { 
     if (addTrustStoreCertificatesRequest == null)
     {
@@ -129,7 +104,7 @@ public class TrustStoreClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>TrustStoreCertificate</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<TrustStoreCertificate>> EnableCertificate(string id, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<TrustStoreCertificate>> EnableCertificateAsync(string id, CancellationToken cancellationToken = default)
   { 
     if (id == null)
     {
@@ -163,7 +138,7 @@ public class TrustStoreClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>TrustStoreCertificate</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<TrustStoreCertificate>> DisableCertificate(string id, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<TrustStoreCertificate>> DisableCertificateAsync(string id, CancellationToken cancellationToken = default)
   { 
     if (id == null)
     {
@@ -197,7 +172,7 @@ public class TrustStoreClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns></returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse> DeleteCertificate(string id, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse> DeleteCertificateAsync(string id, CancellationToken cancellationToken = default)
   { 
     if (id == null)
     {
@@ -227,7 +202,7 @@ public class TrustStoreClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>TrustStore</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<TrustStore>> AddCertificateRevocations(AddTrustStoreRevocationsRequest addTrustStoreRevocationsRequest, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<TrustStore>> AddCertificateRevocationsAsync(AddTrustStoreRevocationsRequest addTrustStoreRevocationsRequest, CancellationToken cancellationToken = default)
   { 
     if (addTrustStoreRevocationsRequest == null)
     {
@@ -260,7 +235,7 @@ public class TrustStoreClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>TrustStoreRevocation</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<TrustStoreRevocation>> EnableCertificateRevocation(string id, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<TrustStoreRevocation>> EnableCertificateRevocationAsync(string id, CancellationToken cancellationToken = default)
   { 
     if (id == null)
     {
@@ -294,7 +269,7 @@ public class TrustStoreClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>TrustStoreRevocation</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<TrustStoreRevocation>> DisableCertificateRevocation(string id, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<TrustStoreRevocation>> DisableCertificateRevocationAsync(string id, CancellationToken cancellationToken = default)
   { 
     if (id == null)
     {
@@ -328,7 +303,7 @@ public class TrustStoreClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns></returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse> DeleteCertificateRevocation(string id, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse> DeleteCertificateRevocationAsync(string id, CancellationToken cancellationToken = default)
   { 
     if (id == null)
     {
@@ -358,7 +333,7 @@ public class TrustStoreClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>TrustStore</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<TrustStore>> AddBannedThumbprints(AddBannedThumbprintsRequest addBannedThumbprintsRequest, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<TrustStore>> AddBannedThumbprintsAsync(AddBannedThumbprintsRequest addBannedThumbprintsRequest, CancellationToken cancellationToken = default)
   { 
     if (addBannedThumbprintsRequest == null)
     {
@@ -391,7 +366,7 @@ public class TrustStoreClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns></returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse> DeleteBannedThumbprint(string thumbprint, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse> DeleteBannedThumbprintAsync(string thumbprint, CancellationToken cancellationToken = default)
   { 
     if (thumbprint == null)
     {

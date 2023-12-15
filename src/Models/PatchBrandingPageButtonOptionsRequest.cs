@@ -39,7 +39,7 @@ public class PatchBrandingPageButtonOptionsRequest
    /// <summary>
    /// Specifies the box-shadow of the button
    /// </summary>
-   public Optional<PatchBrandingGenericPageShadowOptionsRequest?> Shadow { get; set; }
+   public Optional<PatchBrandingGenericPageShadowOptionsRequest> Shadow { get; set; }
 
    /// <summary>
    /// Specifies the background of the button
@@ -64,7 +64,7 @@ public class PatchBrandingPageButtonOptionsRequest
    /// <summary>
    /// Specifies the box-shadow of the button when it is in the hover state
    /// </summary>
-   public Optional<PatchBrandingGenericPageShadowOptionsRequest?> HoverShadow { get; set; }
+   public Optional<PatchBrandingGenericPageShadowOptionsRequest> HoverShadow { get; set; }
 
    /// <summary>
    /// Specifies the background of the button when it is in the hover state
@@ -89,7 +89,7 @@ public class PatchBrandingPageButtonOptionsRequest
    /// <summary>
    /// Specifies the box-shadow of the outline type button
    /// </summary>
-   public Optional<PatchBrandingGenericPageShadowOptionsRequest?> OutlineShadow { get; set; }
+   public Optional<PatchBrandingGenericPageShadowOptionsRequest> OutlineShadow { get; set; }
 
    /// <summary>
    /// Specifies the color (in Hex) of the text contained in the outline type button
@@ -109,7 +109,7 @@ public class PatchBrandingPageButtonOptionsRequest
    /// <summary>
    /// Specifies the box-shadow of the outline type button when it is in the hover state
    /// </summary>
-   public Optional<PatchBrandingGenericPageShadowOptionsRequest?> OutlineHoverShadow { get; set; }
+   public Optional<PatchBrandingGenericPageShadowOptionsRequest> OutlineHoverShadow { get; set; }
 
    /// <summary>
    /// Specifies the color (in Hex) of the text contained in the outline type button when it is in the hover state

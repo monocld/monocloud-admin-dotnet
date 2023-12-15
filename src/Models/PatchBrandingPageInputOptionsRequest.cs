@@ -44,7 +44,7 @@ public class PatchBrandingPageInputOptionsRequest
    /// <summary>
    /// Specifies the box-shadow of the input box
    /// </summary>
-   public Optional<PatchBrandingGenericPageShadowOptionsRequest?> Shadow { get; set; }
+   public Optional<PatchBrandingGenericPageShadowOptionsRequest> Shadow { get; set; }
 
    /// <summary>
    /// Specifies the border color (in Hex) of the input box
@@ -59,7 +59,7 @@ public class PatchBrandingPageInputOptionsRequest
    /// <summary>
    /// Specifies the box-shadow of the input box when it is in the focused state
    /// </summary>
-   public Optional<PatchBrandingGenericPageShadowOptionsRequest?> FocusShadow { get; set; }
+   public Optional<PatchBrandingGenericPageShadowOptionsRequest> FocusShadow { get; set; }
 
    /// <summary>
    /// Specifies the text color (in Hex) of the input box when it is in the focused state
@@ -79,12 +79,12 @@ public class PatchBrandingPageInputOptionsRequest
    /// <summary>
    /// Specifies the box-shadow of the input box when it is in the error state
    /// </summary>
-   public Optional<PatchBrandingGenericPageShadowOptionsRequest?> ErrorShadow { get; set; }
+   public Optional<PatchBrandingGenericPageShadowOptionsRequest> ErrorShadow { get; set; }
 
    /// <summary>
    /// Specifies the box-shadow of the input when it is in the error and focused state
    /// </summary>
-   public Optional<PatchBrandingGenericPageShadowOptionsRequest?> ErrorFocusShadow { get; set; }
+   public Optional<PatchBrandingGenericPageShadowOptionsRequest> ErrorFocusShadow { get; set; }
 }
 
 

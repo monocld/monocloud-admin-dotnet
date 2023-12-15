@@ -26,7 +26,7 @@ public class SecretValue
    /// <summary>
    /// The expiration date of the secret (in Epoch)
    /// </summary>
-   public long? Expiration { get; set; }
+   public DateTime? Expiration { get; set; }
 
    /// <summary>
    /// Specifies type of secret
@@ -36,12 +36,12 @@ public class SecretValue
    /// <summary>
    /// Specifies the creation time of the client secret (in Epoch).
    /// </summary>
-   public long CreationTime { get; set; }
+   public DateTime CreationTime { get; set; }
 
    /// <summary>
    /// Specifies the last update time of the client secret (in Epoch).
    /// </summary>
-   public long LastUpdated { get; set; }
+   public DateTime LastUpdated { get; set; }
 }
 
 

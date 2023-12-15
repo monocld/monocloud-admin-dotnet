@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Web;
 using MonoCloud.SDK.Core.Base;
 using MonoCloud.SDK.Core.Exception;
+using MonoCloud.SDK.Core.Helpers;
 using MonoCloud.SDK.Admin.Models;
 
 namespace MonoCloud.SDK.Admin.Clients;
@@ -45,7 +46,7 @@ public class KeysClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>List&lt;KeyMaterial&gt;</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<List<KeyMaterial>>> GetAllKeyMaterials(int? page = 1, int? size = 10, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<List<KeyMaterial>, PageModel>> GetAllKeyMaterialsAsync(int? page = 1, int? size = 10, CancellationToken cancellationToken = default)
   { 
     var urlBuilder = new StringBuilder();
     urlBuilder.Append("keys?");
@@ -72,7 +73,7 @@ public class KeysClient : MonoCloudClientBase
       }
     };
 
-    return ProcessRequestAsync<List<KeyMaterial>>(request, cancellationToken);
+    return ProcessRequestAsync<List<KeyMaterial>, PageModel>(request, cancellationToken);
   }
 
   /// <summary>
@@ -82,7 +83,7 @@ public class KeysClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns></returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse> RotateKey(string keyId, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse> RotateKeyAsync(string keyId, CancellationToken cancellationToken = default)
   { 
     if (keyId == null)
     {
@@ -112,7 +113,7 @@ public class KeysClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns></returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse> RevokeKey(string keyId, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse> RevokeKeyAsync(string keyId, CancellationToken cancellationToken = default)
   { 
     if (keyId == null)
     {

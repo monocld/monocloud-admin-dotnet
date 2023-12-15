@@ -147,9 +147,9 @@ public class PatchClientRequest
    public Optional<int> AuthorizationCodeLifetime { get; set; }
 
    /// <summary>
-   /// Lifetime of a user consent in seconds
+   /// Lifetime of a user consent in seconds. Set to 0 for no expiration.
    /// </summary>
-   public Optional<int?> ConsentLifetime { get; set; }
+   public Optional<int> ConsentLifetime { get; set; }
 
    /// <summary>
    /// Maximum lifetime of a refresh token in seconds
@@ -204,7 +204,7 @@ public class PatchClientRequest
    /// <summary>
    /// If set, the client claim will be prefixed with this value
    /// </summary>
-   public Optional<string?> ClientClaimsPrefix { get; set; }
+   public Optional<string> ClientClaimsPrefix { get; set; }
 
    /// <summary>
    /// The allowed CORS origins for JavaScript clients.
@@ -212,9 +212,9 @@ public class PatchClientRequest
    public Optional<List<string>> AllowedCorsOrigins { get; set; }
 
    /// <summary>
-   /// The maximum duration (in seconds) since the last time the user authenticated. You can adjust the lifetime of a session token to control when and how often a user is required to reenter credentials instead of being silently authenticated, when using a web application.
+   /// The maximum duration (in seconds) since the last time the user authenticated. You can adjust the lifetime of a session token to control when and how often a user is required to reenter credentials instead of being silently authenticated, when using a web application. Set to 0 for no restriction.
    /// </summary>
-   public Optional<int?> UserSsoLifetime { get; set; }
+   public Optional<int> UserSsoLifetime { get; set; }
 
    /// <summary>
    /// Specifies the type of code that will be generated for the device code flow

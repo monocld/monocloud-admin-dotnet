@@ -26,7 +26,7 @@ public class BrandingPageProviderButtonOptions
    /// <summary>
    /// Specifies the box-shadow of the login provider buttons
    /// </summary>
-   public BrandingGenericPageShadowOptions? Shadow { get; set; }
+   public BrandingGenericPageShadowOptions Shadow { get; set; }
 
    /// <summary>
    /// Specifies the background of the login provider buttons
@@ -56,7 +56,7 @@ public class BrandingPageProviderButtonOptions
    /// <summary>
    /// Specifies the box-shadow of the login provider buttons when in the hover state
    /// </summary>
-   public BrandingGenericPageShadowOptions? HoverShadow { get; set; }
+   public BrandingGenericPageShadowOptions HoverShadow { get; set; }
 
    /// <summary>
    /// Specifies the background of the login provider buttons when in the hover state

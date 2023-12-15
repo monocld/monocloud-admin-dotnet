@@ -11,7 +11,7 @@ public class AddTrustStoreRevocationsRequest
    /// <summary>
    /// List of certificate revocations.
    /// </summary>
-   public List<CreateTrustStoreRevocationRequest> Revocations { get; set; } = new();
+   public List<CreateTrustStoreRevocationRequest> Revocations { get; set; }
 }
 
 

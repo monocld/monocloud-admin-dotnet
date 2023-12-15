@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Web;
 using MonoCloud.SDK.Core.Base;
 using MonoCloud.SDK.Core.Exception;
+using MonoCloud.SDK.Core.Helpers;
 using MonoCloud.SDK.Admin.Models;
 
 namespace MonoCloud.SDK.Admin.Clients;
@@ -47,7 +48,7 @@ public class LogsClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>List&lt;LogSummary&gt;</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<List<LogSummary>>> GetAllLogs(int? page = 1, int? size = 10, string? filter = default, string? sort = default, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<List<LogSummary>, PageModel>> GetAllLogsAsync(int? page = 1, int? size = 10, string? filter = default, string? sort = default, CancellationToken cancellationToken = default)
   { 
     var urlBuilder = new StringBuilder();
     urlBuilder.Append("logs?");
@@ -84,7 +85,7 @@ public class LogsClient : MonoCloudClientBase
       }
     };
 
-    return ProcessRequestAsync<List<LogSummary>>(request, cancellationToken);
+    return ProcessRequestAsync<List<LogSummary>, PageModel>(request, cancellationToken);
   }
 
   /// <summary>
@@ -94,7 +95,7 @@ public class LogsClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>Log</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<Log>> FindLogById(string id, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<Log>> FindLogByIdAsync(string id, CancellationToken cancellationToken = default)
   { 
     if (id == null)
     {

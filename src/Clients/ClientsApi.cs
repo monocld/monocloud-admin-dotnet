@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Web;
 using MonoCloud.SDK.Core.Base;
 using MonoCloud.SDK.Core.Exception;
+using MonoCloud.SDK.Core.Helpers;
 using MonoCloud.SDK.Admin.Models;
 
 namespace MonoCloud.SDK.Admin.Clients;
@@ -44,7 +45,7 @@ public class ClientsClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>Client</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<Client>> FindClientById(string id, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<Client>> FindClientByIdAsync(string id, CancellationToken cancellationToken = default)
   { 
     if (id == null)
     {
@@ -78,7 +79,7 @@ public class ClientsClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns></returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse> DeleteClient(string id, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse> DeleteClientAsync(string id, CancellationToken cancellationToken = default)
   { 
     if (id == null)
     {
@@ -109,7 +110,7 @@ public class ClientsClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>Client</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<Client>> PatchClient(string id, PatchClientRequest patchClientRequest, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<Client>> PatchClientAsync(string id, PatchClientRequest patchClientRequest, CancellationToken cancellationToken = default)
   { 
     if (id == null)
     {
@@ -150,7 +151,7 @@ public class ClientsClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>SecretValue</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<SecretValue>> FindClientSecretById(string clientId, string secretId, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<SecretValue>> FindClientSecretByIdAsync(string clientId, string secretId, CancellationToken cancellationToken = default)
   { 
     if (clientId == null)
     {
@@ -192,7 +193,7 @@ public class ClientsClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns></returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse> DeleteClientSecret(string clientId, string secretId, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse> DeleteClientSecretAsync(string clientId, string secretId, CancellationToken cancellationToken = default)
   { 
     if (clientId == null)
     {
@@ -232,7 +233,7 @@ public class ClientsClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>List&lt;Client&gt;</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<List<Client>>> GetAllClients(int? page = 1, int? size = 10, string? filter = default, string? sort = default, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<List<Client>, PageModel>> GetAllClientsAsync(int? page = 1, int? size = 10, string? filter = default, string? sort = default, CancellationToken cancellationToken = default)
   { 
     var urlBuilder = new StringBuilder();
     urlBuilder.Append("clients?");
@@ -269,7 +270,7 @@ public class ClientsClient : MonoCloudClientBase
       }
     };
 
-    return ProcessRequestAsync<List<Client>>(request, cancellationToken);
+    return ProcessRequestAsync<List<Client>, PageModel>(request, cancellationToken);
   }
 
   /// <summary>
@@ -279,7 +280,7 @@ public class ClientsClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>Client</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<Client>> CreateClient(CreateClientRequest createClientRequest, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<Client>> CreateClientAsync(CreateClientRequest createClientRequest, CancellationToken cancellationToken = default)
   { 
     if (createClientRequest == null)
     {
@@ -313,7 +314,7 @@ public class ClientsClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>Secret</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<Secret>> CreateClientSecret(string clientId, CreateSecretRequest createSecretRequest, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<Secret>> CreateClientSecretAsync(string clientId, CreateSecretRequest createSecretRequest, CancellationToken cancellationToken = default)
   { 
     if (clientId == null)
     {

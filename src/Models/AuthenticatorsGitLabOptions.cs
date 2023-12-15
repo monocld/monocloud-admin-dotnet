@@ -36,7 +36,7 @@ public class AuthenticatorsGitLabOptions
    /// <summary>
    /// List of provider scopes to be obtained
    /// </summary>
-   public List<string>? Scopes { get; set; }
+   public List<string> Scopes { get; set; }
 
    /// <summary>
    /// Specifies if we should trust the email verified scope received from the external provider.

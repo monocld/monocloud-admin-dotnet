@@ -36,12 +36,12 @@ public class ClaimResource
    /// <summary>
    /// Specifies the creation time of the resource (in Epoch).
    /// </summary>
-   public long CreationTime { get; set; }
+   public DateTime CreationTime { get; set; }
 
    /// <summary>
    /// Specifies the last update time of the resource (in Epoch).
    /// </summary>
-   public long LastUpdated { get; set; }
+   public DateTime LastUpdated { get; set; }
 
    /// <summary>
    /// The unique name of the claim.

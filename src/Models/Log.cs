@@ -46,7 +46,7 @@ public class Log
    /// <summary>
    /// Specifies the event time (in Epoch).
    /// </summary>
-   public long TimeStamp { get; set; }
+   public DateTime TimeStamp { get; set; }
 
    /// <summary>
    /// The Request metadata.

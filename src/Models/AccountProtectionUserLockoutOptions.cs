@@ -31,7 +31,7 @@ public class AccountProtectionUserLockoutOptions
    /// <summary>
    /// Whitelisted IP Addresses where the Account Protection does not trigger.
    /// </summary>
-   public List<string>? AllowedIps { get; set; }
+   public List<string> AllowedIps { get; set; }
 
    /// <summary>
    /// Types of Lockouts to enable per User Account
