@@ -1,9 +1,11 @@
 using MonoCloud.SDK.Admin.Models;
+using MonoCloud.SDK.Core.Exception;
 using Moq;
 using Moq.Contrib.HttpClient;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Net;
+using System.Text;
 
 namespace MonoCloud.SDK.Admin.UnitTests;
 
@@ -182,6 +184,89 @@ public class SDKTests
     Assert.Equal(0, result.PageData.CurrentPage);
     Assert.False(result.PageData.HasNext);
     Assert.False(result.PageData.HasPrevious);
+  }
+
+  [Fact]
+  public async Task Identity_error_should_handle_correctly()
+  {
+    const string response = """
+    {
+        "type": "https://httpstatuses.io/422#identity-validation-error",
+        "title": "Unprocessable Entity",
+        "status": 422,
+        "errors": [
+            {
+                "code": "PasswordTooShort",
+                "description": "Passwords must be at least 8 characters."
+            },
+            {
+                "code": "PasswordRequiresNonAlphanumeric",
+                "description": "Passwords must have at least one non alphanumeric character."
+            },
+            {
+                "code": "PasswordRequiresUpper",
+                "description": "Passwords must have at least one uppercase ('A'-'Z')."
+            }
+        ],
+        "traceId": "00-cd3f24e893675e2dae242875e99e7c85-296286fe1c04c085-01"
+    }
+    """;
+
+    _httpMessageHandlerMock.SetupRequest(_ => Task.FromResult(true)).ReturnsResponse(HttpStatusCode.UnprocessableEntity, new StringContent(response, Encoding.UTF8, "application/problem+json"));
+
+    try
+    {
+      await _adminClient.Clients.CreateClientAsync(new CreateClientRequest());
+      throw new Exception("Invalid");
+    }
+    catch (Exception e)
+    {
+      Assert.True(e is MonoCloudErrorCodeValidationException);
+      var mcError = (e as MonoCloudErrorCodeValidationException)!;
+      Assert.StartsWith("Unprocessable Entity", mcError.Message);
+      Assert.NotNull(mcError.Response);
+      Assert.Equal(3, mcError.Errors.Count());
+      Assert.Equal("PasswordTooShort", mcError.Errors.First().Code);
+      Assert.Equal("PasswordRequiresNonAlphanumeric", mcError.Errors.Skip(1).First().Code);
+      Assert.Equal("PasswordRequiresUpper", mcError.Errors.Last().Code);
+    }
+  }
+
+  [Fact]
+  public async Task Key_validation_error_should_handle_correctly()
+  {
+    const string response = """
+    {
+        "type": "https://httpstatuses.io/422#validation-error",
+        "title": "Unprocessable Entity",
+        "status": 422,
+        "errors": {
+          "name": ["Invalid Name"],
+          "password": ["Invalid Password"]
+        },
+        "traceId": "00-cd3f24e893675e2dae242875e99e7c85-296286fe1c04c085-01"
+    }
+    """;
+
+    _httpMessageHandlerMock.SetupRequest(_ => Task.FromResult(true)).ReturnsResponse(HttpStatusCode.UnprocessableEntity, new StringContent(response, Encoding.UTF8, "application/problem+json"));
+
+    try
+    {
+      await _adminClient.Clients.CreateClientAsync(new CreateClientRequest());
+      throw new Exception("Invalid");
+    }
+    catch (Exception e)
+    {
+      Assert.True(e is MonoCloudKeyValidationException);
+      var mcError = (e as MonoCloudKeyValidationException)!;
+      Assert.NotNull(mcError.Response);
+      Assert.StartsWith("Unprocessable Entity", mcError.Message);
+      Assert.Equal(2, mcError.Errors.Count);
+      Assert.Equal("name", mcError.Errors.First().Key);
+      Assert.Equal("Invalid Name", mcError.Errors.First().Value.Single());
+      Assert.Equal("password", mcError.Errors.Last().Key);
+      Assert.Equal("Invalid Password", mcError.Errors.Last().Value.Single());
+    }
   }
 
   private void SetMockResponse(object request, HttpStatusCode code = HttpStatusCode.OK, IDictionary<string, string>? headers = null) =>
