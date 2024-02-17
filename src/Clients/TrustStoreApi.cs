@@ -65,17 +65,17 @@ public class TrustStoreClient : MonoCloudClientBase
   }
 
   /// <summary>
-  /// Add Certificates to truststore
+  /// Add a Certificates to truststore
   /// </summary>
-  /// <param name="addTrustStoreCertificatesRequest">Request Body</param>
+  /// <param name="createTrustStoreCertificateRequest">Request Body</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>TrustStore</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<TrustStore>> AddCertificatesAsync(AddTrustStoreCertificatesRequest addTrustStoreCertificatesRequest, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<TrustStore>> AddCertificateAsync(CreateTrustStoreCertificateRequest createTrustStoreCertificateRequest, CancellationToken cancellationToken = default)
   { 
-    if (addTrustStoreCertificatesRequest == null)
+    if (createTrustStoreCertificateRequest == null)
     {
-      throw new ArgumentNullException(nameof(addTrustStoreCertificatesRequest));
+      throw new ArgumentNullException(nameof(createTrustStoreCertificateRequest));
     }
     
     var urlBuilder = new StringBuilder();
@@ -87,7 +87,7 @@ public class TrustStoreClient : MonoCloudClientBase
     {
       Method = new HttpMethod("POST"),
       RequestUri = new Uri(urlBuilder.ToString(), UriKind.RelativeOrAbsolute),
-      Content = new StringContent(Serialize(addTrustStoreCertificatesRequest), Encoding.UTF8, "application/json"),
+      Content = new StringContent(Serialize(createTrustStoreCertificateRequest), Encoding.UTF8, "application/json"),
       Headers =
       {
         { "Accept", "application/json" }
@@ -196,17 +196,17 @@ public class TrustStoreClient : MonoCloudClientBase
   }
 
   /// <summary>
-  /// Add Certificate Revocations to truststore
+  /// Add a Certificate Revocation to truststore
   /// </summary>
-  /// <param name="addTrustStoreRevocationsRequest">Request Body</param>
+  /// <param name="createTrustStoreRevocationRequest">Request Body</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>TrustStore</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<TrustStore>> AddCertificateRevocationsAsync(AddTrustStoreRevocationsRequest addTrustStoreRevocationsRequest, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<TrustStore>> AddCertificateRevocationAsync(CreateTrustStoreRevocationRequest createTrustStoreRevocationRequest, CancellationToken cancellationToken = default)
   { 
-    if (addTrustStoreRevocationsRequest == null)
+    if (createTrustStoreRevocationRequest == null)
     {
-      throw new ArgumentNullException(nameof(addTrustStoreRevocationsRequest));
+      throw new ArgumentNullException(nameof(createTrustStoreRevocationRequest));
     }
     
     var urlBuilder = new StringBuilder();
@@ -218,7 +218,7 @@ public class TrustStoreClient : MonoCloudClientBase
     {
       Method = new HttpMethod("POST"),
       RequestUri = new Uri(urlBuilder.ToString(), UriKind.RelativeOrAbsolute),
-      Content = new StringContent(Serialize(addTrustStoreRevocationsRequest), Encoding.UTF8, "application/json"),
+      Content = new StringContent(Serialize(createTrustStoreRevocationRequest), Encoding.UTF8, "application/json"),
       Headers =
       {
         { "Accept", "application/json" }
@@ -324,6 +324,47 @@ public class TrustStoreClient : MonoCloudClientBase
     };
 
     return ProcessRequestAsync(request, cancellationToken);
+  }
+
+  /// <summary>
+  /// Update a Certificate Revocation
+  /// </summary>
+  /// <param name="id">Certificate Revocation Id</param>
+  /// <param name="updateTrustStoreRevocationRequest">Update certificate revocation request</param>
+  /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+  /// <returns>TrustStoreRevocation</returns>
+  /// <exception cref="MonoCloudException">A server side error occurred.</exception>
+  public Task<MonoCloudResponse<TrustStoreRevocation>> UpdateCertificateRevocationAsync(string id, UpdateTrustStoreRevocationRequest updateTrustStoreRevocationRequest, CancellationToken cancellationToken = default)
+  { 
+    if (id == null)
+    {
+      throw new ArgumentNullException(nameof(id));
+    }
+    
+    if (updateTrustStoreRevocationRequest == null)
+    {
+      throw new ArgumentNullException(nameof(updateTrustStoreRevocationRequest));
+    }
+    
+    var encodedId = HttpUtility.UrlEncode(id);
+
+    var urlBuilder = new StringBuilder();
+    urlBuilder.Append($"truststore/revocations/{encodedId}?");
+
+    urlBuilder.Length--;
+
+    var request = new HttpRequestMessage
+    {
+      Method = new HttpMethod("PATCH"),
+      RequestUri = new Uri(urlBuilder.ToString(), UriKind.RelativeOrAbsolute),
+      Content = new StringContent(Serialize(updateTrustStoreRevocationRequest), Encoding.UTF8, "application/json"),
+      Headers =
+      {
+        { "Accept", "application/json" }
+      }
+    };
+
+    return ProcessRequestAsync<TrustStoreRevocation>(request, cancellationToken);
   }
 
   /// <summary>

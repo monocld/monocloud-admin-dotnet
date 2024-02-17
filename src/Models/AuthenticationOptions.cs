@@ -9,6 +9,11 @@ namespace MonoCloud.SDK.Admin.Models;
 public class AuthenticationOptions
 {
    /// <summary>
+   /// Pushed Authorization Request Options
+   /// </summary>
+   public PushedAuthorizationOptions PushedAuthorization { get; set; }
+
+   /// <summary>
    /// Account Protection Options
    /// </summary>
    public AccountProtectionOptions AccountProtection { get; set; }

@@ -84,6 +84,21 @@ public class CreateClientRequest
    public bool? RequireRequestObject { get; set; }
 
    /// <summary>
+   /// Specifies whether Pushed Authorization Requests are required for authorization.
+   /// </summary>
+   public bool? RequirePushedAuthorizationRequests { get; set; }
+
+   /// <summary>
+   /// Specifies whether the client will be able to use any redirect uri  and not be restricted to the whitelisted ones.
+   /// </summary>
+   public bool? AllowAnyPushedAuthorizationRedirectUri { get; set; }
+
+   /// <summary>
+   /// Specifies the expiration period of the Authorization Request in seconds.
+   /// </summary>
+   public int? AuthorizationRequestLifetime { get; set; }
+
+   /// <summary>
    /// Controls whether access tokens are transmitted via the browser for this client. This can prevent accidental leakage of access tokens when multiple response types are allowed.
    /// </summary>
    public bool? AllowAccessTokensViaBrowser { get; set; }

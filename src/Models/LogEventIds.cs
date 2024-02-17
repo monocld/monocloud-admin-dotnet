@@ -61,6 +61,10 @@ public enum LogEventIds
 
     UserDeleted,
 
+    ParSuccess,
+
+    ParFailure,
+
     TokenIssuedSuccess,
 
     TokenIssuedFailure,
