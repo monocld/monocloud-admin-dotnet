@@ -54,6 +54,11 @@ public class Client
    public bool RequireConsent { get; set; }
 
    /// <summary>
+   /// Specifies whether to show the consent screen when the offline_access scope is requested (regardless of RememberConsent)
+   /// </summary>
+   public bool AlwaysRequireConsentForOfflineAccess { get; set; }
+
+   /// <summary>
    /// Specifies whether user can choose to store consent decisions
    /// </summary>
    public RememberConsentTypes RememberConsent { get; set; }

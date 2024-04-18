@@ -32,11 +32,6 @@ public class PatchAuthenticationOptionsRequest
    public Optional<PatchRecoveryMethodsOptionsRequest> RecoveryMethods { get; set; }
 
    /// <summary>
-   /// Consent Options
-   /// </summary>
-   public Optional<PatchConsentOptionsRequest> Consent { get; set; }
-
-   /// <summary>
    /// Session Options
    /// </summary>
    public Optional<PatchSessionOptionsRequest> Session { get; set; }

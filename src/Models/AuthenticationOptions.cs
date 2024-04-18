@@ -29,11 +29,6 @@ public class AuthenticationOptions
    public RecoveryMethodsOptions RecoveryMethods { get; set; }
 
    /// <summary>
-   /// Consent Options
-   /// </summary>
-   public ConsentOptions Consent { get; set; }
-
-   /// <summary>
    /// Session Options
    /// </summary>
    public SessionOptions Session { get; set; }
