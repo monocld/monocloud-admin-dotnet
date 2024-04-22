@@ -11,7 +11,7 @@ public class CommunicationEmailSendGridOptions
    /// <summary>
    /// SendGrid Api Key
    /// </summary>
-   public string ApiKey { get; set; }
+   public required string ApiKey { get; set; }
 }
 
 

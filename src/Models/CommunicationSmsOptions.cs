@@ -16,7 +16,7 @@ public class CommunicationSmsOptions
    /// <summary>
    /// Use the the internal keys to send Sms
    /// </summary>
-   public bool UseInternalKeys { get; set; }
+   public required bool UseInternalKeys { get; set; }
 }
 
 

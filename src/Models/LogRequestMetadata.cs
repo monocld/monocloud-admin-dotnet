@@ -56,12 +56,12 @@ public class LogRequestMetadata
    /// <summary>
    /// The remote ip address of the request.
    /// </summary>
-   public string RemoteIpAddress { get; set; }
+   public required string RemoteIpAddress { get; set; }
 
    /// <summary>
    /// The user agent of the request.
    /// </summary>
-   public string UserAgent { get; set; }
+   public required string UserAgent { get; set; }
 }
 
 

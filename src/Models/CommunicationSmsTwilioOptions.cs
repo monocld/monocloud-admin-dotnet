@@ -11,12 +11,12 @@ public class CommunicationSmsTwilioOptions
    /// <summary>
    /// Twilio SID
    /// </summary>
-   public string Sid { get; set; }
+   public required string Sid { get; set; }
 
    /// <summary>
    /// Twilio Auth Token
    /// </summary>
-   public string AuthToken { get; set; }
+   public required string AuthToken { get; set; }
 
    /// <summary>
    /// Twilio Messaging SID

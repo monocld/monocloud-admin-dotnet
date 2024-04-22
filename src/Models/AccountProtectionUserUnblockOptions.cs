@@ -11,7 +11,7 @@ public class AccountProtectionUserUnblockOptions
    /// <summary>
    /// User Unblock Email Options
    /// </summary>
-   public AccountProtectionUserUnblockEmailOptions Email { get; set; }
+   public required AccountProtectionUserUnblockEmailOptions Email { get; set; }
 }
 
 

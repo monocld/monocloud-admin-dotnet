@@ -11,17 +11,17 @@ public class TrustStoreCertificate
    /// <summary>
    /// Certificate Id.
    /// </summary>
-   public string Id { get; set; }
+   public required string Id { get; set; }
 
    /// <summary>
    /// Specifies if the certificate is enabled.
    /// </summary>
-   public bool Enabled { get; set; }
+   public required bool Enabled { get; set; }
 
    /// <summary>
    /// Certificate Value.
    /// </summary>
-   public string Value { get; set; }
+   public required string Value { get; set; }
 }
 
 

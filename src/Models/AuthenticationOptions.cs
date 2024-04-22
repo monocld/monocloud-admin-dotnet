@@ -11,42 +11,42 @@ public class AuthenticationOptions
    /// <summary>
    /// Pushed Authorization Request Options
    /// </summary>
-   public PushedAuthorizationOptions PushedAuthorization { get; set; }
+   public required PushedAuthorizationOptions PushedAuthorization { get; set; }
 
    /// <summary>
    /// Account Protection Options
    /// </summary>
-   public AccountProtectionOptions AccountProtection { get; set; }
+   public required AccountProtectionOptions AccountProtection { get; set; }
 
    /// <summary>
    /// Authenticators Options
    /// </summary>
-   public AuthenticatorsOptions Authenticators { get; set; }
+   public required AuthenticatorsOptions Authenticators { get; set; }
 
    /// <summary>
    /// Identifiers Options
    /// </summary>
-   public IdentifiersOptions Identifiers { get; set; }
+   public required IdentifiersOptions Identifiers { get; set; }
 
    /// <summary>
    /// Recovery Methods Options
    /// </summary>
-   public RecoveryMethodsOptions RecoveryMethods { get; set; }
+   public required RecoveryMethodsOptions RecoveryMethods { get; set; }
 
    /// <summary>
    /// Session Options
    /// </summary>
-   public SessionOptions Session { get; set; }
+   public required SessionOptions Session { get; set; }
 
    /// <summary>
    /// Logout Options
    /// </summary>
-   public LogoutOptions Logout { get; set; }
+   public required LogoutOptions Logout { get; set; }
 
    /// <summary>
    /// Sign-up Options
    /// </summary>
-   public SignUpOptions SignUp { get; set; }
+   public required SignUpOptions SignUp { get; set; }
 }
 
 

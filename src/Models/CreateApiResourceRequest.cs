@@ -31,7 +31,7 @@ public class CreateApiResourceRequest
    /// <summary>
    /// The audience that will be added to the outgoing access token.
    /// </summary>
-   public string Audience { get; set; }
+   public required string Audience { get; set; }
 
    /// <summary>
    /// The Api secret is used for the introspection endpoint. The API can authenticate with introspection using the API name and secret.
@@ -41,12 +41,12 @@ public class CreateApiResourceRequest
    /// <summary>
    /// List of API scope names.
    /// </summary>
-   public List<string> Scopes { get; set; }
+   public required List<string> Scopes { get; set; }
 
    /// <summary>
    /// List of associated user claim types that should be included in the Access token.
    /// </summary>
-   public List<string> UserClaims { get; set; }
+   public required List<string> UserClaims { get; set; }
 }
 
 

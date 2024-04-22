@@ -11,62 +11,62 @@ public class BrandingEmailOptions
    /// <summary>
    /// Welcome Email Branding Options
    /// </summary>
-   public BrandingGenericEmailTemplateOptions Welcome { get; set; }
+   public required BrandingGenericEmailTemplateOptions Welcome { get; set; }
 
    /// <summary>
    /// User Blocked Email Branding Options
    /// </summary>
-   public BrandingGenericEmailTemplateOptions UserBlocked { get; set; }
+   public required BrandingGenericEmailTemplateOptions UserBlocked { get; set; }
 
    /// <summary>
    /// Sign In Email Code Branding Options
    /// </summary>
-   public BrandingGenericEmailTemplateOptions SignInCode { get; set; }
+   public required BrandingGenericEmailTemplateOptions SignInCode { get; set; }
 
    /// <summary>
    /// Sign In Email Link Branding Options
    /// </summary>
-   public BrandingGenericEmailTemplateOptions SignInLink { get; set; }
+   public required BrandingGenericEmailTemplateOptions SignInLink { get; set; }
 
    /// <summary>
    /// Sign In Email Code and Link Branding Options
    /// </summary>
-   public BrandingGenericEmailTemplateOptions SignInCodeAndLink { get; set; }
+   public required BrandingGenericEmailTemplateOptions SignInCodeAndLink { get; set; }
 
    /// <summary>
    /// Verification Email Code Branding Options
    /// </summary>
-   public BrandingGenericEmailTemplateOptions VerificationCode { get; set; }
+   public required BrandingGenericEmailTemplateOptions VerificationCode { get; set; }
 
    /// <summary>
    /// Verification Email Link Branding Options
    /// </summary>
-   public BrandingGenericEmailTemplateOptions VerificationLink { get; set; }
+   public required BrandingGenericEmailTemplateOptions VerificationLink { get; set; }
 
    /// <summary>
    /// Verification Email Code and Link Branding Options
    /// </summary>
-   public BrandingGenericEmailTemplateOptions VerificationCodeAndLink { get; set; }
+   public required BrandingGenericEmailTemplateOptions VerificationCodeAndLink { get; set; }
 
    /// <summary>
    /// Password Reset Email Code Branding Options
    /// </summary>
-   public BrandingGenericEmailTemplateOptions PasswordResetCode { get; set; }
+   public required BrandingGenericEmailTemplateOptions PasswordResetCode { get; set; }
 
    /// <summary>
    /// Password Reset Email Link Branding Options
    /// </summary>
-   public BrandingGenericEmailTemplateOptions PasswordResetLink { get; set; }
+   public required BrandingGenericEmailTemplateOptions PasswordResetLink { get; set; }
 
    /// <summary>
    /// Password Reset Email Code and Link Branding Options
    /// </summary>
-   public BrandingGenericEmailTemplateOptions PasswordResetCodeAndLink { get; set; }
+   public required BrandingGenericEmailTemplateOptions PasswordResetCodeAndLink { get; set; }
 
    /// <summary>
    /// Password Updated Email Branding Options
    /// </summary>
-   public BrandingGenericEmailTemplateOptions PasswordUpdated { get; set; }
+   public required BrandingGenericEmailTemplateOptions PasswordUpdated { get; set; }
 }
 
 

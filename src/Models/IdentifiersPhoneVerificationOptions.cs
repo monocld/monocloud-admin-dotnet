@@ -11,17 +11,17 @@ public class IdentifiersPhoneVerificationOptions
    /// <summary>
    /// Specifies whether the phone should be verified at registration.
    /// </summary>
-   public bool VerifyAtSignUp { get; set; }
+   public required bool VerifyAtSignUp { get; set; }
 
    /// <summary>
    /// Specifies the expiration period of the code (in seconds)
    /// </summary>
-   public int Expiry { get; set; }
+   public required int Expiry { get; set; }
 
    /// <summary>
    /// Specifies the length of the code
    /// </summary>
-   public int CodeLength { get; set; }
+   public required int CodeLength { get; set; }
 }
 
 

@@ -16,12 +16,12 @@ public class CommunicationEmailOptions
    /// <summary>
    /// Use the the internal keys to send Emails
    /// </summary>
-   public bool UseInternalKeys { get; set; }
+   public required bool UseInternalKeys { get; set; }
 
    /// <summary>
    /// Default email address from where the emails will be sent.
    /// </summary>
-   public string DefaultFromEmail { get; set; }
+   public required string DefaultFromEmail { get; set; }
 
    /// <summary>
    /// From Email Address

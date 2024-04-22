@@ -11,62 +11,62 @@ public class BrandingPageLayoutOptions
    /// <summary>
    /// Specifies the background of the page
    /// </summary>
-   public BrandingGenericPageBackgroundOptions Background { get; set; }
+   public required BrandingGenericPageBackgroundOptions Background { get; set; }
 
    /// <summary>
    /// Specifies the size of the card (in Pixels)
    /// </summary>
-   public int CardWidth { get; set; }
+   public required int CardWidth { get; set; }
 
    /// <summary>
    /// Specifies position of the card relative to the page
    /// </summary>
-   public string CardPosition { get; set; }
+   public required string CardPosition { get; set; }
 
    /// <summary>
    /// Specifies the column in which the card will be positioned on the grid
    /// </summary>
-   public int CardGridColumn { get; set; }
+   public required int CardGridColumn { get; set; }
 
    /// <summary>
    /// Specifies how many columns the card will occupy on the grid
    /// </summary>
-   public int CardGridSpan { get; set; }
+   public required int CardGridSpan { get; set; }
 
    /// <summary>
    /// Specifies the offset (in Pixels) used to position the card horizontally on the page
    /// </summary>
-   public int CardXOffset { get; set; }
+   public required int CardXOffset { get; set; }
 
    /// <summary>
    /// Specifies the background of the card
    /// </summary>
-   public BrandingGenericPageBackgroundOptions CardBackground { get; set; }
+   public required BrandingGenericPageBackgroundOptions CardBackground { get; set; }
 
    /// <summary>
    /// Specifies the padding (in Pixels) to be applied to the card
    /// </summary>
-   public float CardPadding { get; set; }
+   public required float CardPadding { get; set; }
 
    /// <summary>
    /// Specifies the border width (in Pixels) of the card
    /// </summary>
-   public float CardBorderWidth { get; set; }
+   public required float CardBorderWidth { get; set; }
 
    /// <summary>
    /// Specifies the border radius (in Pixels) of the card
    /// </summary>
-   public int CardBorderRadius { get; set; }
+   public required int CardBorderRadius { get; set; }
 
    /// <summary>
    /// Specifies the border color (in Hex) of the card
    /// </summary>
-   public string CardBorderColor { get; set; }
+   public required string CardBorderColor { get; set; }
 
    /// <summary>
    /// Specifies the box-shadow of the card
    /// </summary>
-   public BrandingGenericPageShadowOptions CardShadow { get; set; }
+   public required BrandingGenericPageShadowOptions CardShadow { get; set; }
 }
 
 

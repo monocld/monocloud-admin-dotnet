@@ -11,62 +11,62 @@ public class BrandingPageTextOptions
    /// <summary>
    /// Specifies the font size (in Rem) of the regular text
    /// </summary>
-   public float RegularFontSize { get; set; }
+   public required float RegularFontSize { get; set; }
 
    /// <summary>
    /// Specifies the font weight of the regule text
    /// </summary>
-   public int RegularFontWeight { get; set; }
+   public required int RegularFontWeight { get; set; }
 
    /// <summary>
    /// Specifies the font size (in Rem) of the small text
    /// </summary>
-   public float SmallFontSize { get; set; }
+   public required float SmallFontSize { get; set; }
 
    /// <summary>
    /// Specifies the font size (in Rem) of the extra-small text
    /// </summary>
-   public float ExtraSmallFontSize { get; set; }
+   public required float ExtraSmallFontSize { get; set; }
 
    /// <summary>
    /// Specifies the color (in Hex) of the regular text
    /// </summary>
-   public string TextColor { get; set; }
+   public required string TextColor { get; set; }
 
    /// <summary>
    /// Specifies the color (in Hex) of the error text
    /// </summary>
-   public string ErrorColor { get; set; }
+   public required string ErrorColor { get; set; }
 
    /// <summary>
    /// Specifies the color (in Hex) of an error element when it is in the hover state
    /// </summary>
-   public string ErrorHoverColor { get; set; }
+   public required string ErrorHoverColor { get; set; }
 
    /// <summary>
    /// Specifies the alignment of the heading text relative to the card
    /// </summary>
-   public string HeadingAlignment { get; set; }
+   public required string HeadingAlignment { get; set; }
 
    /// <summary>
    /// Specifies the font size (in Rem) of the heading text
    /// </summary>
-   public float HeadingFontSize { get; set; }
+   public required float HeadingFontSize { get; set; }
 
    /// <summary>
    /// Specifies the font weight of the heading text
    /// </summary>
-   public int HeadingFontWeight { get; set; }
+   public required int HeadingFontWeight { get; set; }
 
    /// <summary>
    /// Specifies the font size (in Rem) of the sub-heading text
    /// </summary>
-   public float SubHeadingFontSize { get; set; }
+   public required float SubHeadingFontSize { get; set; }
 
    /// <summary>
    /// Specifies the font weight of the sub-heading text
    /// </summary>
-   public int SubHeadingFontWeight { get; set; }
+   public required int SubHeadingFontWeight { get; set; }
 }
 
 

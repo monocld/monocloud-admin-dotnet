@@ -11,22 +11,22 @@ public class IdentifiersUsernameOptions
    /// <summary>
    /// Specifies if the users are allowed to sign-in using a username
    /// </summary>
-   public bool EnableSignIn { get; set; }
+   public required bool EnableSignIn { get; set; }
 
    /// <summary>
    /// Specifies if the users are allowed to enter a username at the time of registration.
    /// </summary>
-   public bool ShowAtSignUp { get; set; }
+   public required bool ShowAtSignUp { get; set; }
 
    /// <summary>
    /// Specifies if the username is required at the time of registration.
    /// </summary>
-   public bool RequiredAtSignUp { get; set; }
+   public required bool RequiredAtSignUp { get; set; }
 
    /// <summary>
    /// Specifies the minimum length required for the username.
    /// </summary>
-   public int MinimumLength { get; set; }
+   public required int MinimumLength { get; set; }
 }
 
 

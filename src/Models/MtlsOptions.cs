@@ -11,27 +11,27 @@ public class MtlsOptions
    /// <summary>
    /// Enable MTLS
    /// </summary>
-   public bool Enabled { get; set; }
+   public required bool Enabled { get; set; }
 
    /// <summary>
    /// Specifies the permitted certificate types.
    /// </summary>
-   public CertificateTypes AllowedCertificateTypes { get; set; }
+   public required CertificateTypes AllowedCertificateTypes { get; set; }
 
    /// <summary>
    /// If set to true, will validates whether the certificate is intended for authentication
    /// </summary>
-   public bool ValidateCertificateUse { get; set; }
+   public required bool ValidateCertificateUse { get; set; }
 
    /// <summary>
    /// If set to true, will verify the certificate&#39;s validity period
    /// </summary>
-   public bool ValidateValidityPeriod { get; set; }
+   public required bool ValidateValidityPeriod { get; set; }
 
    /// <summary>
    /// Specifies the type of revocation check.
    /// </summary>
-   public X509RevocationMode RevocationMode { get; set; }
+   public required X509RevocationMode RevocationMode { get; set; }
 }
 
 

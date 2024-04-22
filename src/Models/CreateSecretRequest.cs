@@ -16,7 +16,7 @@ public class CreateSecretRequest
    /// <summary>
    /// The secret
    /// </summary>
-   public string Value { get; set; }
+   public required string Value { get; set; }
 
    /// <summary>
    /// The expiration date of the secret (in Epoch)

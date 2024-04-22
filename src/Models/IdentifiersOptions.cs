@@ -11,17 +11,17 @@ public class IdentifiersOptions
    /// <summary>
    /// Email Identifier Options
    /// </summary>
-   public IdentifiersEmailOptions Email { get; set; }
+   public required IdentifiersEmailOptions Email { get; set; }
 
    /// <summary>
    /// Phone Identifier Options
    /// </summary>
-   public IdentifiersPhoneOptions Phone { get; set; }
+   public required IdentifiersPhoneOptions Phone { get; set; }
 
    /// <summary>
    /// Username Identifier Options
    /// </summary>
-   public IdentifiersUsernameOptions Username { get; set; }
+   public required IdentifiersUsernameOptions Username { get; set; }
 }
 
 

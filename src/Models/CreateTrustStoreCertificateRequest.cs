@@ -16,7 +16,7 @@ public class CreateTrustStoreCertificateRequest
    /// <summary>
    /// Certificate Value.
    /// </summary>
-   public string Value { get; set; }
+   public required string Value { get; set; }
 }
 
 

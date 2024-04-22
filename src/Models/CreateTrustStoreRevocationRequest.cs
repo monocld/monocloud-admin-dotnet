@@ -16,7 +16,7 @@ public class CreateTrustStoreRevocationRequest
    /// <summary>
    /// Certificate Crl Value.
    /// </summary>
-   public string Value { get; set; }
+   public required string Value { get; set; }
 }
 
 

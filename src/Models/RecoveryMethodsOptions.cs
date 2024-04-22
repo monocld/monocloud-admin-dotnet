@@ -11,12 +11,12 @@ public class RecoveryMethodsOptions
    /// <summary>
    /// Recovery Methods Email Options
    /// </summary>
-   public RecoveryMethodsEmailOptions Email { get; set; }
+   public required RecoveryMethodsEmailOptions Email { get; set; }
 
    /// <summary>
    /// Recovery Methods Phone Options
    /// </summary>
-   public RecoveryMethodsPhoneOptions Phone { get; set; }
+   public required RecoveryMethodsPhoneOptions Phone { get; set; }
 }
 
 

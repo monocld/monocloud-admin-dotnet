@@ -11,7 +11,7 @@ public class AddBannedThumbprintsRequest
    /// <summary>
    /// List of banned certificate thumbprints.
    /// </summary>
-   public List<string> BannedThumbprints { get; set; }
+   public required List<string> BannedThumbprints { get; set; }
 }
 
 

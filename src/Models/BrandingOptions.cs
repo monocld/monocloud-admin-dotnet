@@ -11,22 +11,22 @@ public class BrandingOptions
    /// <summary>
    /// Email Branding Options
    /// </summary>
-   public BrandingEmailOptions Email { get; set; }
+   public required BrandingEmailOptions Email { get; set; }
 
    /// <summary>
    /// Sms Branding Options
    /// </summary>
-   public BrandingSmsOptions Sms { get; set; }
+   public required BrandingSmsOptions Sms { get; set; }
 
    /// <summary>
    /// Page Branding Options
    /// </summary>
-   public BrandingPageOptions Page { get; set; }
+   public required BrandingPageOptions Page { get; set; }
 
    /// <summary>
    /// Project Branding Options
    /// </summary>
-   public BrandingProjectOptions Project { get; set; }
+   public required BrandingProjectOptions Project { get; set; }
 }
 
 
