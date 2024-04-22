@@ -11,27 +11,27 @@ public class Log
    /// <summary>
    /// Unique identifier of the log
    /// </summary>
-   public string Id { get; set; }
+   public required string Id { get; set; }
 
    /// <summary>
    /// Log Category
    /// </summary>
-   public LogEventCategories Category { get; set; }
+   public required LogEventCategories Category { get; set; }
 
    /// <summary>
    /// Log Name.
    /// </summary>
-   public string Name { get; set; }
+   public required string Name { get; set; }
 
    /// <summary>
    /// Log Type.
    /// </summary>
-   public LogEventTypes EventType { get; set; }
+   public required LogEventTypes EventType { get; set; }
 
    /// <summary>
    /// Log event Id.
    /// </summary>
-   public LogEventIds EventId { get; set; }
+   public required LogEventIds EventId { get; set; }
 
    /// <summary>
    /// Message
@@ -46,17 +46,17 @@ public class Log
    /// <summary>
    /// Specifies the event time (in Epoch).
    /// </summary>
-   public DateTime TimeStamp { get; set; }
+   public required DateTime TimeStamp { get; set; }
 
    /// <summary>
    /// The Request metadata.
    /// </summary>
-   public LogRequestMetadata Metadata { get; set; }
+   public required LogRequestMetadata Metadata { get; set; }
 
    /// <summary>
    /// Specifies if the log was triggered by a user interactive process.
    /// </summary>
-   public bool Interactive { get; set; }
+   public required bool Interactive { get; set; }
 
    /// <summary>
    /// The client Id.

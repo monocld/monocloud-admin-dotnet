@@ -11,12 +11,12 @@ public class SignUpGenericRestrictionsOptions
    /// <summary>
    /// Specifies whether or not the restriction is enabled.
    /// </summary>
-   public bool Enabled { get; set; }
+   public required bool Enabled { get; set; }
 
    /// <summary>
    /// List of Emails, Phone numbers, and top-level domains to be considered for access control.
    /// </summary>
-   public List<string> Identifiers { get; set; }
+   public required List<string> Identifiers { get; set; }
 }
 
 

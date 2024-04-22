@@ -11,22 +11,22 @@ public class LogSummary
    /// <summary>
    /// Unique identifier of the log
    /// </summary>
-   public string Id { get; set; }
+   public required string Id { get; set; }
 
    /// <summary>
    /// Log Category
    /// </summary>
-   public LogEventCategories Category { get; set; }
+   public required LogEventCategories Category { get; set; }
 
    /// <summary>
    /// Log Name.
    /// </summary>
-   public string Name { get; set; }
+   public required string Name { get; set; }
 
    /// <summary>
    /// Log Type.
    /// </summary>
-   public LogEventTypes EventType { get; set; }
+   public required LogEventTypes EventType { get; set; }
 
    /// <summary>
    /// The Activity Id.
@@ -36,7 +36,7 @@ public class LogSummary
    /// <summary>
    /// Specifies the event time (in Epoch).
    /// </summary>
-   public DateTime TimeStamp { get; set; }
+   public required DateTime TimeStamp { get; set; }
 
    /// <summary>
    /// The client Id.

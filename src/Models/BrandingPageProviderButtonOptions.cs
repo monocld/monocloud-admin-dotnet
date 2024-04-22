@@ -11,62 +11,62 @@ public class BrandingPageProviderButtonOptions
    /// <summary>
    /// Specifies the border radius (in Pixels) of the login provider buttons
    /// </summary>
-   public int BorderRadius { get; set; }
+   public required int BorderRadius { get; set; }
 
    /// <summary>
    /// Specifies the border color (in Hex) of the login provider buttons
    /// </summary>
-   public string BorderColor { get; set; }
+   public required string BorderColor { get; set; }
 
    /// <summary>
    /// Specifies the border width (in Pixels) of the login provider buttons
    /// </summary>
-   public float BorderWidth { get; set; }
+   public required float BorderWidth { get; set; }
 
    /// <summary>
    /// Specifies the box-shadow of the login provider buttons
    /// </summary>
-   public BrandingGenericPageShadowOptions Shadow { get; set; }
+   public required BrandingGenericPageShadowOptions Shadow { get; set; }
 
    /// <summary>
    /// Specifies the background of the login provider buttons
    /// </summary>
-   public BrandingGenericPageBackgroundOptions Background { get; set; }
+   public required BrandingGenericPageBackgroundOptions Background { get; set; }
 
    /// <summary>
    /// Specifies the color (in Hex) of the text contained in the login provider buttons
    /// </summary>
-   public string TextColor { get; set; }
+   public required string TextColor { get; set; }
 
    /// <summary>
    /// Specifies the alignment of the text contained in the login provider buttons
    /// </summary>
-   public string TextAlignment { get; set; }
+   public required string TextAlignment { get; set; }
 
    /// <summary>
    /// Specifies the border color (in Hex) of the login provider buttons when in the hover state
    /// </summary>
-   public string HoverBorderColor { get; set; }
+   public required string HoverBorderColor { get; set; }
 
    /// <summary>
    /// Specifies the border width (in Pixels) of the login provider buttons when in the hover state
    /// </summary>
-   public float HoverBorderWidth { get; set; }
+   public required float HoverBorderWidth { get; set; }
 
    /// <summary>
    /// Specifies the box-shadow of the login provider buttons when in the hover state
    /// </summary>
-   public BrandingGenericPageShadowOptions HoverShadow { get; set; }
+   public required BrandingGenericPageShadowOptions HoverShadow { get; set; }
 
    /// <summary>
    /// Specifies the background of the login provider buttons when in the hover state
    /// </summary>
-   public BrandingGenericPageBackgroundOptions HoverBackground { get; set; }
+   public required BrandingGenericPageBackgroundOptions HoverBackground { get; set; }
 
    /// <summary>
    /// Specifies the color (in Hex) of the text contained in the login provider buttons when in the hover state
    /// </summary>
-   public string HoverTextColor { get; set; }
+   public required string HoverTextColor { get; set; }
 }
 
 

@@ -11,27 +11,27 @@ public class AuthenticatorsOptions
    /// <summary>
    /// If enabled, External SigIn Methods are shown on top and the Primary SigIn method is shown on bottom.
    /// </summary>
-   public bool ExternalSignInMethodsFirst { get; set; }
+   public required bool ExternalSignInMethodsFirst { get; set; }
 
    /// <summary>
    /// Order of the External SigIn methods buttons
    /// </summary>
-   public List<ExternalAuthenticators> ExternalSignInMethodsOrder { get; set; }
+   public required List<ExternalAuthenticators> ExternalSignInMethodsOrder { get; set; }
 
    /// <summary>
    /// Password Authenticator Settings
    /// </summary>
-   public AuthenticatorsPasswordOptions Password { get; set; }
+   public required AuthenticatorsPasswordOptions Password { get; set; }
 
    /// <summary>
    /// Email Authenticator Settings
    /// </summary>
-   public AuthenticatorsEmailOptions Email { get; set; }
+   public required AuthenticatorsEmailOptions Email { get; set; }
 
    /// <summary>
    /// Phone Authenticator Settings
    /// </summary>
-   public AuthenticatorsPhoneOptions Phone { get; set; }
+   public required AuthenticatorsPhoneOptions Phone { get; set; }
 
    /// <summary>
    /// Google Authenticator Settings

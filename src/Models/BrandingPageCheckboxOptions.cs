@@ -11,57 +11,57 @@ public class BrandingPageCheckboxOptions
    /// <summary>
    /// Specifies the background of the checkbox
    /// </summary>
-   public BrandingGenericPageBackgroundOptions Background { get; set; }
+   public required BrandingGenericPageBackgroundOptions Background { get; set; }
 
    /// <summary>
    /// Specifies the border radius (in pixels) of the checkbox
    /// </summary>
-   public int BorderRadius { get; set; }
+   public required int BorderRadius { get; set; }
 
    /// <summary>
    /// Specifies the border color (in Hex) of the checkbox
    /// </summary>
-   public string BorderColor { get; set; }
+   public required string BorderColor { get; set; }
 
    /// <summary>
    /// Specifies the border width (in Pixels) of the checkbox
    /// </summary>
-   public float BorderWidth { get; set; }
+   public required float BorderWidth { get; set; }
 
    /// <summary>
    /// Specifies the background of the checkbox when it is in the hover state
    /// </summary>
-   public BrandingGenericPageBackgroundOptions HoverBackground { get; set; }
+   public required BrandingGenericPageBackgroundOptions HoverBackground { get; set; }
 
    /// <summary>
    /// Specifies the border color (in Hex) of the checkbox when it is in the hover state
    /// </summary>
-   public string HoverBorderColor { get; set; }
+   public required string HoverBorderColor { get; set; }
 
    /// <summary>
    /// Specifies the border width (in Pixels) of the checkbox when it is in the hover state
    /// </summary>
-   public float HoverBorderWidth { get; set; }
+   public required float HoverBorderWidth { get; set; }
 
    /// <summary>
    /// Specifies the background of the checkbox when it is in the disabled state
    /// </summary>
-   public BrandingGenericPageBackgroundOptions DisabledBackground { get; set; }
+   public required BrandingGenericPageBackgroundOptions DisabledBackground { get; set; }
 
    /// <summary>
    /// Specifies the background of the checkbox when it is in the checked state
    /// </summary>
-   public BrandingGenericPageBackgroundOptions CheckedBackground { get; set; }
+   public required BrandingGenericPageBackgroundOptions CheckedBackground { get; set; }
 
    /// <summary>
    /// Specifies the border color (in Hex) of the checkbox when it is in the checked state
    /// </summary>
-   public string CheckedBorderColor { get; set; }
+   public required string CheckedBorderColor { get; set; }
 
    /// <summary>
    /// Specifies the color (in Hex) of the check-mark in the checkbox when it is in the checked state
    /// </summary>
-   public string CheckMarkColor { get; set; }
+   public required string CheckMarkColor { get; set; }
 }
 
 

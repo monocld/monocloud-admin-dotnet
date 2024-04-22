@@ -11,17 +11,17 @@ public class RecoveryMethodsPhoneOptions
    /// <summary>
    /// Enable Password recovery through Phone.
    /// </summary>
-   public bool Enabled { get; set; }
+   public required bool Enabled { get; set; }
 
    /// <summary>
    /// Specifies the expiration period of the code (in seconds)
    /// </summary>
-   public int Expiry { get; set; }
+   public required int Expiry { get; set; }
 
    /// <summary>
    /// Specifies the length of the code
    /// </summary>
-   public int CodeLength { get; set; }
+   public required int CodeLength { get; set; }
 }
 
 

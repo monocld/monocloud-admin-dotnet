@@ -11,17 +11,17 @@ public class SignUpOptions
    /// <summary>
    /// Registration Custom Fields Options
    /// </summary>
-   public List<SignUpCustomFieldOptions> CustomFields { get; set; }
+   public required List<SignUpCustomFieldOptions> CustomFields { get; set; }
 
    /// <summary>
    /// Shows T&amp;C and/or Privacy Policy Agreement on the Sign Up screen.  Make sure to add T&amp;C and/or Privacy Policy links in the Project Settings.  T&amp;C and/or Privacy Policy Agreement is not shown when user is created through External Identity Providers
    /// </summary>
-   public bool ShowTermsAndPrivacyPolicy { get; set; }
+   public required bool ShowTermsAndPrivacyPolicy { get; set; }
 
    /// <summary>
    /// Requires user interaction to agree with T&amp;C and/or Privacy Policy
    /// </summary>
-   public bool RequireExplicitUserAgreement { get; set; }
+   public required bool RequireExplicitUserAgreement { get; set; }
 
    /// <summary>
    /// Privacy Url
@@ -36,17 +36,17 @@ public class SignUpOptions
    /// <summary>
    /// Send an email to user at the time of signup.
    /// </summary>
-   public bool EnableWelcomeEmail { get; set; }
+   public required bool EnableWelcomeEmail { get; set; }
 
    /// <summary>
    /// The whitelist Restriction Options.
    /// </summary>
-   public SignUpGenericRestrictionsOptions Whitelist { get; set; }
+   public required SignUpGenericRestrictionsOptions Whitelist { get; set; }
 
    /// <summary>
    /// The blacklist Restriction Options.
    /// </summary>
-   public SignUpGenericRestrictionsOptions Blacklist { get; set; }
+   public required SignUpGenericRestrictionsOptions Blacklist { get; set; }
 }
 
 

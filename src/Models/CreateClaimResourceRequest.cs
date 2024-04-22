@@ -31,12 +31,12 @@ public class CreateClaimResourceRequest
    /// <summary>
    /// The unique name of the claim.
    /// </summary>
-   public string Name { get; set; }
+   public required string Name { get; set; }
 
    /// <summary>
    /// Specifies the source of the claim.
    /// </summary>
-   public string Source { get; set; }
+   public required string Source { get; set; }
 
    /// <summary>
    /// Specifies whether the user can de-select the claim on the consent screen (if such a feature is implemented in the consent screen).

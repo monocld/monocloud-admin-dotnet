@@ -11,17 +11,17 @@ public class TrustStore
    /// <summary>
    /// List of certificates.
    /// </summary>
-   public List<TrustStoreCertificate> Certificates { get; set; }
+   public required List<TrustStoreCertificate> Certificates { get; set; }
 
    /// <summary>
    /// List of certificate revocations.
    /// </summary>
-   public List<TrustStoreRevocation> Revocations { get; set; }
+   public required List<TrustStoreRevocation> Revocations { get; set; }
 
    /// <summary>
    /// List of banned certificate thumbprints.
    /// </summary>
-   public List<string> BannedThumbprints { get; set; }
+   public required List<string> BannedThumbprints { get; set; }
 }
 
 

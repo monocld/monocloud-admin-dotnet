@@ -11,7 +11,7 @@ public class CreateScopeClaimRequest
    /// <summary>
    /// Specifies the name of the claim.
    /// </summary>
-   public string Claim { get; set; }
+   public required string Claim { get; set; }
 
    /// <summary>
    /// Specifies whether the claim will be included in the Identity Token.

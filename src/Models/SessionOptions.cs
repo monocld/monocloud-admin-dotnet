@@ -11,22 +11,22 @@ public class SessionOptions
    /// <summary>
    /// Persistence Mode of the session.
    /// </summary>
-   public SessionPersistenceModes PersistenceMode { get; set; }
+   public required SessionPersistenceModes PersistenceMode { get; set; }
 
    /// <summary>
    /// Expiration Type
    /// </summary>
-   public ExpirationTypes ExpirationType { get; set; }
+   public required ExpirationTypes ExpirationType { get; set; }
 
    /// <summary>
    /// Specifies the duration in minutes after which the user session will expire in accordance with the expiration type.
    /// </summary>
-   public int RememberMeDuration { get; set; }
+   public required int RememberMeDuration { get; set; }
 
    /// <summary>
    /// Specifies the duration in minutes after which the user session will expire regardless of the expiration type.
    /// </summary>
-   public int LogoutAfter { get; set; }
+   public required int LogoutAfter { get; set; }
 }
 
 

@@ -11,7 +11,7 @@ public class BrandingGenericSmsTemplateOptions
    /// <summary>
    /// Specifies whether to use the custom template.
    /// </summary>
-   public bool UseCustomTemplate { get; set; }
+   public required bool UseCustomTemplate { get; set; }
 
    /// <summary>
    /// Custom LiquidJS template for the SMS

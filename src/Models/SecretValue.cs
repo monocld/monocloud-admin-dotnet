@@ -11,7 +11,7 @@ public class SecretValue
    /// <summary>
    /// Unique ID of the client secret
    /// </summary>
-   public string Id { get; set; }
+   public required string Id { get; set; }
 
    /// <summary>
    /// Brief description of the secret
@@ -21,7 +21,7 @@ public class SecretValue
    /// <summary>
    /// The raw secret
    /// </summary>
-   public string RawValue { get; set; }
+   public required string RawValue { get; set; }
 
    /// <summary>
    /// The expiration date of the secret (in Epoch)
@@ -31,17 +31,17 @@ public class SecretValue
    /// <summary>
    /// Specifies type of secret
    /// </summary>
-   public SecretTypes Type { get; set; }
+   public required SecretTypes Type { get; set; }
 
    /// <summary>
    /// Specifies the creation time of the client secret (in Epoch).
    /// </summary>
-   public DateTime CreationTime { get; set; }
+   public required DateTime CreationTime { get; set; }
 
    /// <summary>
    /// Specifies the last update time of the client secret (in Epoch).
    /// </summary>
-   public DateTime LastUpdated { get; set; }
+   public required DateTime LastUpdated { get; set; }
 }
 
 

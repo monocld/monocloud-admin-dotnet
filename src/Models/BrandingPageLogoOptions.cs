@@ -16,12 +16,12 @@ public class BrandingPageLogoOptions
    /// <summary>
    /// Specifies the height (in Pixels) of the client / project logo
    /// </summary>
-   public int Height { get; set; }
+   public required int Height { get; set; }
 
    /// <summary>
    /// Specifies the horizontal position of the logo
    /// </summary>
-   public string Position { get; set; }
+   public required string Position { get; set; }
 }
 
 

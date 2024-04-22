@@ -11,7 +11,7 @@ public class AccountProtectionOptions
    /// <summary>
    /// Account Protection&#39;s User Lockout Options
    /// </summary>
-   public AccountProtectionUserLockoutOptions UserLockout { get; set; }
+   public required AccountProtectionUserLockoutOptions UserLockout { get; set; }
 }
 
 

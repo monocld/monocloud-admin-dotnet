@@ -26,7 +26,7 @@ public class CreateClientRequest
    /// <summary>
    /// The name of the client
    /// </summary>
-   public string ClientName { get; set; }
+   public required string ClientName { get; set; }
 
    /// <summary>
    /// A brief description of the client.
@@ -71,7 +71,7 @@ public class CreateClientRequest
    /// <summary>
    /// Specifies the allowed grant types (legal combinations is required).
    /// </summary>
-   public List<GrantTypes> AllowedGrantTypes { get; set; }
+   public required List<GrantTypes> AllowedGrantTypes { get; set; }
 
    /// <summary>
    /// Specifies whether a proof key is required for authorization code based token requests

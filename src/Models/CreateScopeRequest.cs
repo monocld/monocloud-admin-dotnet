@@ -31,7 +31,7 @@ public class CreateScopeRequest
    /// <summary>
    /// The unique name of the scope. This is the value a client will use for the scope parameter in the authorize request.
    /// </summary>
-   public string Name { get; set; }
+   public required string Name { get; set; }
 
    /// <summary>
    /// Specifies the type of scope
@@ -51,7 +51,7 @@ public class CreateScopeRequest
    /// <summary>
    /// List of associated user claim types that should be included in the Identity token, Access Token or as returned from the User Info Endpoint.
    /// </summary>
-   public List<CreateScopeClaimRequest> UserClaims { get; set; }
+   public required List<CreateScopeClaimRequest> UserClaims { get; set; }
 }
 
 
