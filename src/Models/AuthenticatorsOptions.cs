@@ -77,6 +77,11 @@ public class AuthenticatorsOptions
    /// LinkedIn Authenticator Settings
    /// </summary>
    public AuthenticatorsLinkedInOptions? Linkedin { get; set; }
+
+   /// <summary>
+   /// Xero Authenticator Settings
+   /// </summary>
+   public AuthenticatorsXeroOptions? Xero { get; set; }
 }
 
 

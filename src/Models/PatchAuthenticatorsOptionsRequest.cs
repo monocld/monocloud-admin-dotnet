@@ -80,6 +80,11 @@ public class PatchAuthenticatorsOptionsRequest
    /// LinkedIn Authenticator Settings
    /// </summary>
    public Optional<PatchAuthenticatorsLinkedInOptionsRequest?> Linkedin { get; set; }
+
+   /// <summary>
+   /// Xero Authenticator Settings
+   /// </summary>
+   public Optional<PatchAuthenticatorsXeroOptionsRequest?> Xero { get; set; }
 }
 
 
