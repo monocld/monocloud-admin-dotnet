@@ -10,6 +10,11 @@ namespace MonoCloud.SDK.Admin;
 public class MonoCloudAdminClient
 { 
   /// <summary>
+  /// Gets the BrandingClient instance to interact with the Branding Api endpoints
+  /// </summary>
+  public BrandingClient Branding { get; }
+
+  /// <summary>
   /// Gets the ClientsClient instance to interact with the Clients Api endpoints
   /// </summary>
   public ClientsClient Clients { get; }
@@ -45,6 +50,7 @@ public class MonoCloudAdminClient
   /// <param name="configuration">The <see cref="MonoCloudConfig">MonoCloud Configuration</see></param>
   public MonoCloudAdminClient(MonoCloudConfig configuration)
   { 
+    Branding = new BrandingClient(configuration);
     Clients = new ClientsClient(configuration);
     Keys = new KeysClient(configuration);
     Logs = new LogsClient(configuration);
@@ -60,6 +66,7 @@ public class MonoCloudAdminClient
   /// <param name="httpClient">The <see cref="HttpClient"/> which will be used to communicate with the MonoCloud Api</param>
   public MonoCloudAdminClient(HttpClient httpClient)
   { 
+    Branding = new BrandingClient(httpClient);
     Clients = new ClientsClient(httpClient);
     Keys = new KeysClient(httpClient);
     Logs = new LogsClient(httpClient);

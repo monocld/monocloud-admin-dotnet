@@ -12,6 +12,11 @@ namespace MonoCloud.SDK.Admin.Models;
 public class PatchPushedAuthorizationOptionsRequest
 {
    /// <summary>
+   /// Specifies whether Pushed Authorization Requests are enabled.
+   /// </summary>
+   public Optional<bool> EnablePushedAuthorizationRequests { get; set; }
+
+   /// <summary>
    /// Specifies whether Pushed Authorization Requests are required for authorization.
    /// </summary>
    public Optional<bool> RequirePushedAuthorizationRequests { get; set; }
