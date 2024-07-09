@@ -29,6 +29,11 @@ public class BrandingOptions
    public BrandingProjectOptions Project { get; set; }
 
    /// <summary>
+   /// Analytics Branding Options
+   /// </summary>
+   public BrandingAnalyticsOptions Analytics { get; set; }
+
+   /// <summary>
    /// Specifies the creation time of the Branding Options (in Epoch).
    /// </summary>
    public DateTime CreationTime { get; set; }
