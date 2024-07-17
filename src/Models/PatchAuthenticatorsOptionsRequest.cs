@@ -37,6 +37,11 @@ public class PatchAuthenticatorsOptionsRequest
    public Optional<PatchAuthenticatorsPhoneOptionsRequest> Phone { get; set; }
 
    /// <summary>
+   /// Passkey Authenticator Settings
+   /// </summary>
+   public Optional<PatchAuthenticatorsPasskeyOptionsRequest> Passkey { get; set; }
+
+   /// <summary>
    /// Google Authenticator Settings
    /// </summary>
    public Optional<PatchAuthenticatorsGoogleOptionsRequest?> Google { get; set; }

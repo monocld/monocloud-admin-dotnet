@@ -34,6 +34,11 @@ public class AuthenticatorsOptions
    public AuthenticatorsPhoneOptions Phone { get; set; }
 
    /// <summary>
+   /// Passkey Authenticator Settings
+   /// </summary>
+   public AuthenticatorsPasskeyOptions Passkey { get; set; }
+
+   /// <summary>
    /// Google Authenticator Settings
    /// </summary>
    public AuthenticatorsGoogleOptions? Google { get; set; }
