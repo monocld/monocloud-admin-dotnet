@@ -24,6 +24,11 @@ public class AuthenticatorsOptions
    public AuthenticatorsPasswordOptions Password { get; set; }
 
    /// <summary>
+   /// Passkey Authenticator Settings
+   /// </summary>
+   public AuthenticatorsPasskeyOptions Passkey { get; set; }
+
+   /// <summary>
    /// Email Authenticator Settings
    /// </summary>
    public AuthenticatorsEmailOptions Email { get; set; }

@@ -27,6 +27,11 @@ public class PatchAuthenticatorsOptionsRequest
    public Optional<PatchAuthenticatorsPasswordOptionsRequest> Password { get; set; }
 
    /// <summary>
+   /// Passkey Authenticator Settings
+   /// </summary>
+   public Optional<PatchAuthenticatorsPasskeyOptionsRequest> Passkey { get; set; }
+
+   /// <summary>
    /// Email Authenticator Settings
    /// </summary>
    public Optional<PatchAuthenticatorsEmailOptionsRequest> Email { get; set; }

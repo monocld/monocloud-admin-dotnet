@@ -7,6 +7,8 @@ public enum Authenticators
 {
     Password,
 
+    Passkey,
+
     Email,
 
     Phone,
