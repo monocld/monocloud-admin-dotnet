@@ -519,7 +519,6 @@ public class ResourcesClient : MonoCloudClientBase
   /// <summary>
   /// Get all the Scopes
   /// </summary>
-  /// <param name="type">The type of scope by which the results should be filtered. Allowed values are &#39;api&#39; &amp; &#39;identity&#39;</param>
   /// <param name="page">Page Number</param>
   /// <param name="size">Page Size</param>
   /// <param name="filter">Value by which the resources needs to be filtered.</param>
@@ -527,15 +526,10 @@ public class ResourcesClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>List&lt;Scope&gt;</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<List<Scope>, PageModel>> GetAllScopesAsync(string? type = default, int? page = 1, int? size = 10, string? filter = default, string? sort = default, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<List<Scope>, PageModel>> GetAllScopesAsync(int? page = 1, int? size = 10, string? filter = default, string? sort = default, CancellationToken cancellationToken = default)
   { 
     var urlBuilder = new StringBuilder();
     urlBuilder.Append("resources/scopes?");
-
-    if (type != null)
-    {
-      urlBuilder.Append(Uri.EscapeDataString("type") + "=").Append(HttpUtility.UrlEncode(type)).Append("&");
-    }
 
     if (page != null)
     {

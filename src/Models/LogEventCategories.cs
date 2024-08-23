@@ -15,7 +15,9 @@ public enum LogEventCategories
 
     Device,
 
-    Notifications
+    Notifications,
+
+    Audit
 }
 
 

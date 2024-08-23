@@ -29,6 +29,11 @@ public class LogSummary
    public LogEventTypes EventType { get; set; }
 
    /// <summary>
+   /// Log event Id.
+   /// </summary>
+   public LogEventIds EventId { get; set; }
+
+   /// <summary>
    /// The Activity Id.
    /// </summary>
    public string? ActivityId { get; set; }
@@ -39,9 +44,19 @@ public class LogSummary
    public DateTime TimeStamp { get; set; }
 
    /// <summary>
+   /// Specifies if the log was triggered by a user interactive process.
+   /// </summary>
+   public bool Interactive { get; set; }
+
+   /// <summary>
    /// The client Id.
    /// </summary>
    public string? ClientId { get; set; }
+
+   /// <summary>
+   /// The Client Name.
+   /// </summary>
+   public string? ClientName { get; set; }
 }
 
 

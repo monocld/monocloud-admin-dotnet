@@ -97,7 +97,31 @@ public enum LogEventIds
 
     UserWelcomeNotificationSent,
 
-    UserPasswordUpdatedNotificationSent
+    UserPasswordUpdatedNotificationSent,
+
+    UserCreatedAuditEvent,
+
+    UserUpdatedAuditEvent,
+
+    UserDeletedAuditEvent,
+
+    UserEnabledAuditEvent,
+
+    UserDisabledAuditEvent,
+
+    GroupCreatedAuditEvent,
+
+    GroupUpdatedAuditEvent,
+
+    GroupDeletedAuditEvent,
+
+    GroupAssignedUserAuditEvent,
+
+    GroupUnassignedUserAuditEvent,
+
+    GroupAssignedClientAuditEvent,
+
+    GroupUnassignedClientAuditEvent
 }
 
 
