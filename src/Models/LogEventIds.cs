@@ -121,7 +121,13 @@ public enum LogEventIds
 
     GroupAssignedClientAuditEvent,
 
-    GroupUnassignedClientAuditEvent
+    GroupUnassignedClientAuditEvent,
+
+    TenantCreated,
+
+    TenantPendingDeletion,
+
+    TenantPermanentlyDeleted
 }
 
 
