@@ -4,9 +4,9 @@ using System.Collections.Generic;
 namespace MonoCloud.SDK.Admin.Models;
 
 /// <summary>
-/// The Log Request Metadata response class.
+/// The Log Location response
 /// </summary>
-public class LogRequestMetadata
+public class LogLocation
 {
    /// <summary>
    /// The region of the request.
@@ -52,16 +52,6 @@ public class LogRequestMetadata
    /// The zip code of the request.
    /// </summary>
    public string? ZipCode { get; set; }
-
-   /// <summary>
-   /// The remote ip address of the request.
-   /// </summary>
-   public string RemoteIpAddress { get; set; }
-
-   /// <summary>
-   /// The user agent of the request.
-   /// </summary>
-   public string UserAgent { get; set; }
 }
 
 

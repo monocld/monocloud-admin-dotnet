@@ -44,7 +44,7 @@ public class LogsClient : MonoCloudClientBase
   /// <param name="page">Page Number</param>
   /// <param name="size">Page Size</param>
   /// <param name="filter">Value by which the logs needs to be filtered.</param>
-  /// <param name="sort">Value in &#39;sort_key:sort_order&#39; format, by which results will be sorted. Sort order value can be &#39;1&#39; for ascending and &#39;-1&#39; for descending.  Acceptable sort key values are &#39;time_stamp&#39;, &#39;event_id&#39;, &#39;event_type&#39;, &#39;client_name&#39;, and &#39;name&#39;</param>
+  /// <param name="sort">Value in &#39;sort_key:sort_order&#39; format, by which results will be sorted. Sort order value can be &#39;1&#39; for ascending and &#39;-1&#39; for descending.  Acceptable sort key values are &#39;time_stamp&#39;, &#39;category&#39;, &#39;code&#39;, &#39;type&#39;, and &#39;name&#39;</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>List&lt;LogSummary&gt;</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
@@ -95,14 +95,14 @@ public class LogsClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>Log</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<Log>> FindLogByIdAsync(string id, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<Log>> FindLogByIdAsync(Guid id, CancellationToken cancellationToken = default)
   { 
     if (id == null)
     {
       throw new ArgumentNullException(nameof(id));
     }
     
-    var encodedId = HttpUtility.UrlEncode(id);
+    var encodedId = HttpUtility.UrlEncode(id.ToString());
 
     var urlBuilder = new StringBuilder();
     urlBuilder.Append($"logs/{encodedId}?");
