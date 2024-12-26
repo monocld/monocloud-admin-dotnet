@@ -12,11 +12,6 @@ namespace MonoCloud.SDK.Admin.Models;
 public class PatchBrandingPageOptionsRequest
 {
    /// <summary>
-   /// Specifies Uri of the favicon that will be used on all pages
-   /// </summary>
-   public Optional<string?> FaviconUri { get; set; }
-
-   /// <summary>
    /// Page Branding Logo Options
    /// </summary>
    public Optional<PatchBrandingPageLogoOptionsRequest> Logo { get; set; }

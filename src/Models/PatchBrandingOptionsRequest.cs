@@ -25,16 +25,6 @@ public class PatchBrandingOptionsRequest
    /// Page Branding Options
    /// </summary>
    public Optional<PatchBrandingPageOptionsRequest> Page { get; set; }
-
-   /// <summary>
-   /// Project Branding Options
-   /// </summary>
-   public Optional<PatchBrandingProjectOptionsRequest> Project { get; set; }
-
-   /// <summary>
-   /// Analytics Branding Options
-   /// </summary>
-   public Optional<PatchBrandingAnalyticsOptionsRequest> Analytics { get; set; }
 }
 
 

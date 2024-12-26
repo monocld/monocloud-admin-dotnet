@@ -12,11 +12,6 @@ namespace MonoCloud.SDK.Admin.Models;
 public class PatchBrandingPageLogoOptionsRequest
 {
    /// <summary>
-   /// Specifies Uri of the project logo
-   /// </summary>
-   public Optional<string?> Uri { get; set; }
-
-   /// <summary>
    /// Specifies the height (in Pixels) of the client / project logo
    /// </summary>
    public Optional<int> Height { get; set; }

@@ -9,11 +9,6 @@ namespace MonoCloud.SDK.Admin.Models;
 public class BrandingPageLogoOptions
 {
    /// <summary>
-   /// Specifies Uri of the project logo
-   /// </summary>
-   public string? Uri { get; set; }
-
-   /// <summary>
    /// Specifies the height (in Pixels) of the client / project logo
    /// </summary>
    public int Height { get; set; }
