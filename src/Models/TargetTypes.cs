@@ -96,7 +96,12 @@ public enum TargetTypes
   /// <summary>
   /// A Key Material
   /// </summary>
-  KeyMaterial
+  KeyMaterial,
+
+  /// <summary>
+  /// The System
+  /// </summary>
+  System
 }
 
 

@@ -36,7 +36,17 @@ public enum ActorTypes
   /// <summary>
   /// A user
   /// </summary>
-  User
+  User,
+
+  /// <summary>
+  /// Api
+  /// </summary>
+  Api,
+
+  /// <summary>
+  /// Client
+  /// </summary>
+  Client
 }
 
 
