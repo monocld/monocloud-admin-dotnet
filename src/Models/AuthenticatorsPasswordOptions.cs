@@ -29,6 +29,11 @@ public class AuthenticatorsPasswordOptions
    public bool PromptPasswordOnInitialScreen { get; set; }
 
    /// <summary>
+   /// Specifies the expiration period of the password (in days)
+   /// </summary>
+   public int? Expiry { get; set; }
+
+   /// <summary>
    /// Password Strength Options
    /// </summary>
    public AuthenticatorsPasswordStrengthOptions Strength { get; set; }

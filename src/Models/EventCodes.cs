@@ -5,10 +5,7 @@ namespace MonoCloud.SDK.Admin.Models;
 
 public enum EventCodes
 {
-  /// <summary>
-  /// Authentication related events
-  /// </summary>
-  AuthorizationFailure,
+    AuthorizationFailure,
 
     AuthorizationSuccess,
 
@@ -48,10 +45,7 @@ public enum EventCodes
 
     UserLogout,
 
-  /// <summary>
-  /// Token related events
-  /// </summary>
-  TokenIssuedFailure,
+    TokenIssuedFailure,
 
     TokenIssuedSuccess,
 
@@ -61,23 +55,11 @@ public enum EventCodes
 
     TokenRevoked,
 
-    ReferenceTokensUserDeleteAll,
-
-    RefreshTokensUserDeleteAll,
-
-  /// <summary>
-  /// Consent related events
-  /// </summary>
-  ConsentGranted,
+    ConsentGranted,
 
     ConsentDenied,
 
-    ConsentsUserDeletedAll,
-
-  /// <summary>
-  /// Block related events
-  /// </summary>
-  IdentifierIpBlocked,
+    IdentifierIpBlocked,
 
     UserAccountIpBlocked,
 
@@ -91,10 +73,7 @@ public enum EventCodes
 
     UserAccountAllIpsUnblocked,
 
-  /// <summary>
-  /// User related events
-  /// </summary>
-  UserCreated,
+    UserCreated,
 
     UserDeleted,
 
@@ -110,10 +89,7 @@ public enum EventCodes
 
     UserSessionsDeletedAll,
 
-  /// <summary>
-  /// Notification related events
-  /// </summary>
-  SignInEmailSentEvent,
+    SignInEmailSentEvent,
 
     VerificationEmailSentEvent,
 
@@ -135,10 +111,7 @@ public enum EventCodes
 
     SmsSendFailure,
 
-  /// <summary>
-  /// Resources related events
-  /// </summary>
-  ApiResourceCreated,
+    ApiResourceCreated,
 
     ApiResourceUpdated,
 
@@ -148,19 +121,13 @@ public enum EventCodes
 
     ApiResourceSecretDeleted,
 
-  /// <summary>
-  /// Trust Store related events
-  /// </summary>
-  TrustStoreCertificatesUpdated,
+    TrustStoreCertificatesUpdated,
 
     TrustStoreRevocationsUpdated,
 
     TrustStoreBannedThumbprintsUpdated,
 
-  /// <summary>
-  /// Clients related events
-  /// </summary>
-  ClientCreated,
+    ClientCreated,
 
     ClientUpdated,
 
@@ -174,19 +141,21 @@ public enum EventCodes
 
     ClientSecretDeleted,
 
-  /// <summary>
-  /// Groups related events
-  /// </summary>
-  GroupCreated,
+    GroupCreated,
 
     GroupUpdated,
 
     GroupDeleted,
 
-  /// <summary>
-  /// Authorization Codes related events
-  /// </summary>
-  AuthorizationCodesUserDeleteAll
+    UserGrantsUserDeletedAll,
+
+    AuthorizationCodeGrantDeleted,
+
+    UserConsentGrantDeleted,
+
+    ReferenceTokenGrantDeleted,
+
+    RefreshTokenGrantDeleted
 }
 
 

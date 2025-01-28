@@ -32,6 +32,11 @@ public class PatchAuthenticatorsPasswordOptionsRequest
    public Optional<bool> PromptPasswordOnInitialScreen { get; set; }
 
    /// <summary>
+   /// Specifies the expiration period of the password (in days)
+   /// </summary>
+   public Optional<int?> Expiry { get; set; }
+
+   /// <summary>
    /// Password Strength Options
    /// </summary>
    public Optional<PatchAuthenticatorsPasswordStrengthOptionsRequest> Strength { get; set; }
