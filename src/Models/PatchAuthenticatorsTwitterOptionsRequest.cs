@@ -22,6 +22,11 @@ public class PatchAuthenticatorsTwitterOptionsRequest
    public Optional<bool> EnableSignUp { get; set; }
 
    /// <summary>
+   /// If set to true, will use the internal keys for authentication
+   /// </summary>
+   public Optional<bool> UseInternalKeys { get; set; }
+
+   /// <summary>
    /// If set to true, will sync the profile with each login
    /// </summary>
    public Optional<bool> SyncUserProfileAlways { get; set; }
@@ -29,12 +34,12 @@ public class PatchAuthenticatorsTwitterOptionsRequest
    /// <summary>
    /// Client Id issued for the customer by provider
    /// </summary>
-   public Optional<string> ClientId { get; set; }
+   public Optional<string?> ClientId { get; set; }
 
    /// <summary>
    /// Client Secret issued for the customer by provider
    /// </summary>
-   public Optional<string> ClientSecret { get; set; }
+   public Optional<string?> ClientSecret { get; set; }
 
    /// <summary>
    /// Specifies if we should treat the email received from the external provider as verified.
