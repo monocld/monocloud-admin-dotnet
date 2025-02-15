@@ -61,7 +61,7 @@ public class SDKTests
 
     await _adminClient.Clients.CreateClientAsync(new CreateClientRequest
     {
-      AllowedScopes = ["openid"]
+      AllowedIdentityScopes = ["openid"]
     });
 
     Assert.NotEmpty(_requestMessage);

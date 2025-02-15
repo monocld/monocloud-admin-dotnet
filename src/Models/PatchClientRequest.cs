@@ -147,9 +147,14 @@ public class PatchClientRequest
    public Optional<bool> AllowOfflineAccess { get; set; }
 
    /// <summary>
-   /// Specifies the scopes the client is allowed to access (by default a client has no access to any resources)
+   /// Specifies the identity scopes the client is allowed to access (by default a client has no access to any resources)
    /// </summary>
-   public Optional<List<string>> AllowedScopes { get; set; }
+   public Optional<List<string>> AllowedIdentityScopes { get; set; }
+
+   /// <summary>
+   /// Specifies the api scopes the client is allowed to access (by default a client has no access to any resources)
+   /// </summary>
+   public Optional<List<string>> AllowedApiScopes { get; set; }
 
    /// <summary>
    /// Lifetime of identity token in seconds
