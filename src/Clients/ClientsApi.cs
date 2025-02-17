@@ -475,7 +475,7 @@ public class ClientsClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>List&lt;ClientGroup&gt;</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<List<ClientGroup>>> GetAllClientGroupsAsync(string clientId, int? page = 1, int? size = 10, string? sort = default, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<List<ClientGroup>, PageModel>> GetAllClientGroupsAsync(string clientId, int? page = 1, int? size = 10, string? sort = default, CancellationToken cancellationToken = default)
   { 
     if (clientId == null)
     {
@@ -514,7 +514,7 @@ public class ClientsClient : MonoCloudClientBase
       }
     };
 
-    return ProcessRequestAsync<List<ClientGroup>>(request, cancellationToken);
+    return ProcessRequestAsync<List<ClientGroup>, PageModel>(request, cancellationToken);
   }
 
   /// <summary>
