@@ -14,6 +14,16 @@ public class CreateClientRequest
    public bool? Enabled { get; set; }
 
    /// <summary>
+   /// Specifies the preferred application type
+   /// </summary>
+   public ApplicationTypes? AppType { get; set; }
+
+   /// <summary>
+   /// Specifies the preferred technology type
+   /// </summary>
+   public TechTypes? TechType { get; set; }
+
+   /// <summary>
    /// List of Client secrets (only relevant for flows that require a secret)
    /// </summary>
    public List<CreateSecretRequest> Secrets { get; set; }

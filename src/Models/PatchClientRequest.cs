@@ -17,6 +17,16 @@ public class PatchClientRequest
    public Optional<bool> Enabled { get; set; }
 
    /// <summary>
+   /// Specifies the preferred application type
+   /// </summary>
+   public Optional<ApplicationTypes> AppType { get; set; }
+
+   /// <summary>
+   /// Specifies the preferred technology type
+   /// </summary>
+   public Optional<TechTypes> TechType { get; set; }
+
+   /// <summary>
    /// If set to false, no client secret is needed to request tokens at the token endpoint
    /// </summary>
    public Optional<bool> RequireClientSecret { get; set; }
