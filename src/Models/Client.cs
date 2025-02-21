@@ -29,11 +29,6 @@ public class Client
    public TechTypes TechType { get; set; }
 
    /// <summary>
-   /// List of Client secrets (only relevant for flows that require a secret)
-   /// </summary>
-   public List<Secret> Secrets { get; set; }
-
-   /// <summary>
    /// If set to false, no client secret is needed to request tokens at the token endpoint
    /// </summary>
    public bool RequireClientSecret { get; set; }

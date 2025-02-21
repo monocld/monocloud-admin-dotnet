@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace MonoCloud.SDK.Admin.Models;
 
 /// <summary>
-/// The Client Secret response class
+/// The Secret response class
 /// </summary>
 public class Secret
 {
@@ -17,6 +17,11 @@ public class Secret
    /// Brief description of the secret
    /// </summary>
    public string? Description { get; set; }
+
+   /// <summary>
+   /// The raw secret
+   /// </summary>
+   public string RawValue { get; set; }
 
    /// <summary>
    /// The expiration date of the secret (in Epoch)

@@ -144,14 +144,89 @@ public class ClientsClient : MonoCloudClientBase
   }
 
   /// <summary>
+  /// Gets all client secrets
+  /// </summary>
+  /// <param name="clientId">Client Id</param>
+  /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+  /// <returns>List&lt;Secret&gt;</returns>
+  /// <exception cref="MonoCloudException">A server side error occurred.</exception>
+  public Task<MonoCloudResponse<List<Secret>>> GetAllClientSecretsAsync(string clientId, CancellationToken cancellationToken = default)
+  { 
+    if (clientId == null)
+    {
+      throw new ArgumentNullException(nameof(clientId));
+    }
+    
+    var encodedClientId = HttpUtility.UrlEncode(clientId);
+
+    var urlBuilder = new StringBuilder();
+    urlBuilder.Append($"clients/{encodedClientId}/secrets?");
+
+    urlBuilder.Length--;
+
+    var request = new HttpRequestMessage
+    {
+      Method = new HttpMethod("GET"),
+      RequestUri = new Uri(urlBuilder.ToString(), UriKind.RelativeOrAbsolute),
+      Headers =
+      {
+        { "Accept", "application/json" }
+      }
+    };
+
+    return ProcessRequestAsync<List<Secret>>(request, cancellationToken);
+  }
+
+  /// <summary>
+  /// Create a Client Secret
+  /// </summary>
+  /// <param name="clientId">Client Id</param>
+  /// <param name="createSecretRequest">Request Body</param>
+  /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+  /// <returns>Secret</returns>
+  /// <exception cref="MonoCloudException">A server side error occurred.</exception>
+  public Task<MonoCloudResponse<Secret>> CreateClientSecretAsync(string clientId, CreateSecretRequest createSecretRequest, CancellationToken cancellationToken = default)
+  { 
+    if (clientId == null)
+    {
+      throw new ArgumentNullException(nameof(clientId));
+    }
+    
+    if (createSecretRequest == null)
+    {
+      throw new ArgumentNullException(nameof(createSecretRequest));
+    }
+    
+    var encodedClientId = HttpUtility.UrlEncode(clientId);
+
+    var urlBuilder = new StringBuilder();
+    urlBuilder.Append($"clients/{encodedClientId}/secrets?");
+
+    urlBuilder.Length--;
+
+    var request = new HttpRequestMessage
+    {
+      Method = new HttpMethod("POST"),
+      RequestUri = new Uri(urlBuilder.ToString(), UriKind.RelativeOrAbsolute),
+      Content = new StringContent(Serialize(createSecretRequest), Encoding.UTF8, "application/json"),
+      Headers =
+      {
+        { "Accept", "application/json" }
+      }
+    };
+
+    return ProcessRequestAsync<Secret>(request, cancellationToken);
+  }
+
+  /// <summary>
   /// Find a Client Secret by Id
   /// </summary>
   /// <param name="clientId">Client Id</param>
   /// <param name="secretId">Secret Id</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
-  /// <returns>SecretValue</returns>
+  /// <returns>Secret</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<SecretValue>> FindClientSecretByIdAsync(string clientId, string secretId, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<Secret>> FindClientSecretByIdAsync(string clientId, string secretId, CancellationToken cancellationToken = default)
   { 
     if (clientId == null)
     {
@@ -182,7 +257,7 @@ public class ClientsClient : MonoCloudClientBase
       }
     };
 
-    return ProcessRequestAsync<SecretValue>(request, cancellationToken);
+    return ProcessRequestAsync<Secret>(request, cancellationToken);
   }
 
   /// <summary>
@@ -304,47 +379,6 @@ public class ClientsClient : MonoCloudClientBase
     };
 
     return ProcessRequestAsync<Client>(request, cancellationToken);
-  }
-
-  /// <summary>
-  /// Create a Client Secret
-  /// </summary>
-  /// <param name="clientId">Client Id</param>
-  /// <param name="createSecretRequest">Request Body</param>
-  /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
-  /// <returns>Secret</returns>
-  /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<Secret>> CreateClientSecretAsync(string clientId, CreateSecretRequest createSecretRequest, CancellationToken cancellationToken = default)
-  { 
-    if (clientId == null)
-    {
-      throw new ArgumentNullException(nameof(clientId));
-    }
-    
-    if (createSecretRequest == null)
-    {
-      throw new ArgumentNullException(nameof(createSecretRequest));
-    }
-    
-    var encodedClientId = HttpUtility.UrlEncode(clientId);
-
-    var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"clients/{encodedClientId}/secrets?");
-
-    urlBuilder.Length--;
-
-    var request = new HttpRequestMessage
-    {
-      Method = new HttpMethod("POST"),
-      RequestUri = new Uri(urlBuilder.ToString(), UriKind.RelativeOrAbsolute),
-      Content = new StringContent(Serialize(createSecretRequest), Encoding.UTF8, "application/json"),
-      Headers =
-      {
-        { "Accept", "application/json" }
-      }
-    };
-
-    return ProcessRequestAsync<Secret>(request, cancellationToken);
   }
 
   /// <summary>

@@ -144,14 +144,89 @@ public class ResourcesClient : MonoCloudClientBase
   }
 
   /// <summary>
+  /// Gets all Api Resource Secrets
+  /// </summary>
+  /// <param name="resourceId">Resource Id</param>
+  /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+  /// <returns>List&lt;Secret&gt;</returns>
+  /// <exception cref="MonoCloudException">A server side error occurred.</exception>
+  public Task<MonoCloudResponse<List<Secret>>> GetAllApiResourceSecretsAsync(string resourceId, CancellationToken cancellationToken = default)
+  { 
+    if (resourceId == null)
+    {
+      throw new ArgumentNullException(nameof(resourceId));
+    }
+    
+    var encodedResourceId = HttpUtility.UrlEncode(resourceId);
+
+    var urlBuilder = new StringBuilder();
+    urlBuilder.Append($"resources/api_resources/{encodedResourceId}/secrets?");
+
+    urlBuilder.Length--;
+
+    var request = new HttpRequestMessage
+    {
+      Method = new HttpMethod("GET"),
+      RequestUri = new Uri(urlBuilder.ToString(), UriKind.RelativeOrAbsolute),
+      Headers =
+      {
+        { "Accept", "application/json" }
+      }
+    };
+
+    return ProcessRequestAsync<List<Secret>>(request, cancellationToken);
+  }
+
+  /// <summary>
+  /// Create an Api Resource Secret
+  /// </summary>
+  /// <param name="resourceId">Resource Id</param>
+  /// <param name="createSecretRequest">Request Body</param>
+  /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+  /// <returns>Secret</returns>
+  /// <exception cref="MonoCloudException">A server side error occurred.</exception>
+  public Task<MonoCloudResponse<Secret>> CreateApiResourceSecretAsync(string resourceId, CreateSecretRequest createSecretRequest, CancellationToken cancellationToken = default)
+  { 
+    if (resourceId == null)
+    {
+      throw new ArgumentNullException(nameof(resourceId));
+    }
+    
+    if (createSecretRequest == null)
+    {
+      throw new ArgumentNullException(nameof(createSecretRequest));
+    }
+    
+    var encodedResourceId = HttpUtility.UrlEncode(resourceId);
+
+    var urlBuilder = new StringBuilder();
+    urlBuilder.Append($"resources/api_resources/{encodedResourceId}/secrets?");
+
+    urlBuilder.Length--;
+
+    var request = new HttpRequestMessage
+    {
+      Method = new HttpMethod("POST"),
+      RequestUri = new Uri(urlBuilder.ToString(), UriKind.RelativeOrAbsolute),
+      Content = new StringContent(Serialize(createSecretRequest), Encoding.UTF8, "application/json"),
+      Headers =
+      {
+        { "Accept", "application/json" }
+      }
+    };
+
+    return ProcessRequestAsync<Secret>(request, cancellationToken);
+  }
+
+  /// <summary>
   /// Find an Api Resource Secret by Id
   /// </summary>
   /// <param name="resourceId">Resource Id</param>
   /// <param name="secretId">Secret Id</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
-  /// <returns>SecretValue</returns>
+  /// <returns>Secret</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<SecretValue>> FindApiResourceSecretByIdAsync(string resourceId, string secretId, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<Secret>> FindApiResourceSecretByIdAsync(string resourceId, string secretId, CancellationToken cancellationToken = default)
   { 
     if (resourceId == null)
     {
@@ -182,7 +257,7 @@ public class ResourcesClient : MonoCloudClientBase
       }
     };
 
-    return ProcessRequestAsync<SecretValue>(request, cancellationToken);
+    return ProcessRequestAsync<Secret>(request, cancellationToken);
   }
 
   /// <summary>
@@ -680,47 +755,6 @@ public class ResourcesClient : MonoCloudClientBase
     };
 
     return ProcessRequestAsync<ClaimResource>(request, cancellationToken);
-  }
-
-  /// <summary>
-  /// Create an Api Resource Secret
-  /// </summary>
-  /// <param name="resourceId">Resource Id</param>
-  /// <param name="createSecretRequest">Request Body</param>
-  /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
-  /// <returns>Secret</returns>
-  /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<Secret>> CreateApiResourceSecretAsync(string resourceId, CreateSecretRequest createSecretRequest, CancellationToken cancellationToken = default)
-  { 
-    if (resourceId == null)
-    {
-      throw new ArgumentNullException(nameof(resourceId));
-    }
-    
-    if (createSecretRequest == null)
-    {
-      throw new ArgumentNullException(nameof(createSecretRequest));
-    }
-    
-    var encodedResourceId = HttpUtility.UrlEncode(resourceId);
-
-    var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"resources/api_resources/{encodedResourceId}/secrets?");
-
-    urlBuilder.Length--;
-
-    var request = new HttpRequestMessage
-    {
-      Method = new HttpMethod("POST"),
-      RequestUri = new Uri(urlBuilder.ToString(), UriKind.RelativeOrAbsolute),
-      Content = new StringContent(Serialize(createSecretRequest), Encoding.UTF8, "application/json"),
-      Headers =
-      {
-        { "Accept", "application/json" }
-      }
-    };
-
-    return ProcessRequestAsync<Secret>(request, cancellationToken);
   }
 }
 
