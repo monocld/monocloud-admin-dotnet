@@ -39,6 +39,11 @@ public enum ActorTypes
   User,
 
   /// <summary>
+  /// An admin user
+  /// </summary>
+  AdminUser,
+
+  /// <summary>
   /// Api
   /// </summary>
   Api,
