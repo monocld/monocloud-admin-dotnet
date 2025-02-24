@@ -24,11 +24,6 @@ public class CreateClientRequest
    public TechTypes? TechType { get; set; }
 
    /// <summary>
-   /// List of Client secrets (only relevant for flows that require a secret)
-   /// </summary>
-   public List<CreateSecretRequest> Secrets { get; set; }
-
-   /// <summary>
    /// If set to false, no client secret is needed to request tokens at the token endpoint
    /// </summary>
    public bool? RequireClientSecret { get; set; }
@@ -267,6 +262,11 @@ public class CreateClientRequest
    /// Specifies the device code lifetime.
    /// </summary>
    public int? DeviceCodeLifetime { get; set; }
+
+   /// <summary>
+   /// Specifies whether to auto-generate a client secret.
+   /// </summary>
+   public bool? AutoGenerateSecret { get; set; }
 }
 
 

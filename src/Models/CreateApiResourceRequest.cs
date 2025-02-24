@@ -34,11 +34,6 @@ public class CreateApiResourceRequest
    public string Audience { get; set; }
 
    /// <summary>
-   /// The Api secret is used for the introspection endpoint. The API can authenticate with introspection using the API name and secret.
-   /// </summary>
-   public List<CreateSecretRequest> ApiSecrets { get; set; }
-
-   /// <summary>
    /// List of API scope names.
    /// </summary>
    public List<string> Scopes { get; set; }
@@ -47,6 +42,11 @@ public class CreateApiResourceRequest
    /// List of associated user claim types that should be included in the Access token.
    /// </summary>
    public List<string> UserClaims { get; set; }
+
+   /// <summary>
+   /// Specifies whether to auto-generate an API secret.
+   /// </summary>
+   public bool? AutoGenerateSecret { get; set; }
 }
 
 

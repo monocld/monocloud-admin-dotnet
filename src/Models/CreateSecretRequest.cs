@@ -14,11 +14,6 @@ public class CreateSecretRequest
    public string? Description { get; set; }
 
    /// <summary>
-   /// The secret
-   /// </summary>
-   public string Value { get; set; }
-
-   /// <summary>
    /// The expiration date of the secret (in Epoch)
    /// </summary>
    public DateTime? Expiration { get; set; }
@@ -27,6 +22,11 @@ public class CreateSecretRequest
    /// Specifies type of secret
    /// </summary>
    public SecretTypes? Type { get; set; }
+
+   /// <summary>
+   /// The secret
+   /// </summary>
+   public string? SecretValue { get; set; }
 }
 
 

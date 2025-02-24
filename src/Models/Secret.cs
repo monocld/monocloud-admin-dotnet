@@ -19,11 +19,6 @@ public class Secret
    public string? Description { get; set; }
 
    /// <summary>
-   /// The raw secret
-   /// </summary>
-   public string RawValue { get; set; }
-
-   /// <summary>
    /// The expiration date of the secret (in Epoch)
    /// </summary>
    public DateTime? Expiration { get; set; }
@@ -42,6 +37,11 @@ public class Secret
    /// Specifies the last update time of the client secret (in Epoch).
    /// </summary>
    public DateTime LastUpdated { get; set; }
+
+   /// <summary>
+   /// The secret
+   /// </summary>
+   public string SecretValue { get; set; }
 }
 
 

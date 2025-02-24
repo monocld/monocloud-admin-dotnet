@@ -49,11 +49,6 @@ public class ApiResource
    public string Audience { get; set; }
 
    /// <summary>
-   /// The Api secret is used for the introspection endpoint. The API can authenticate with introspection using the API name and secret.
-   /// </summary>
-   public List<Secret> ApiSecrets { get; set; }
-
-   /// <summary>
    /// List of API scope names.
    /// </summary>
    public List<string> Scopes { get; set; }
