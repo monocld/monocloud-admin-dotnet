@@ -24,12 +24,12 @@ public class PatchSessionOptionsRequest
    /// <summary>
    /// Specifies the duration in minutes after which the user session will expire in accordance with the expiration type.
    /// </summary>
-   public Optional<int> RememberMeDuration { get; set; }
+   public Optional<int> SlidingSessionLifetime { get; set; }
 
    /// <summary>
    /// Specifies the duration in minutes after which the user session will expire regardless of the expiration type.
    /// </summary>
-   public Optional<int> LogoutAfter { get; set; }
+   public Optional<int> AbsoluteSessionLifetime { get; set; }
 }
 
 

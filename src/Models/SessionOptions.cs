@@ -21,12 +21,12 @@ public class SessionOptions
    /// <summary>
    /// Specifies the duration in minutes after which the user session will expire in accordance with the expiration type.
    /// </summary>
-   public int RememberMeDuration { get; set; }
+   public int SlidingSessionLifetime { get; set; }
 
    /// <summary>
    /// Specifies the duration in minutes after which the user session will expire regardless of the expiration type.
    /// </summary>
-   public int LogoutAfter { get; set; }
+   public int AbsoluteSessionLifetime { get; set; }
 }
 
 
