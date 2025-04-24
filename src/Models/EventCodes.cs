@@ -121,6 +121,12 @@ public enum EventCodes
 
     ApiResourceSecretDeleted,
 
+    ApiResourceClientCreated,
+
+    ApiResourceClientRemoved,
+
+    ApiResourceClientUpdated,
+
     TrustStoreCertificatesUpdated,
 
     TrustStoreRevocationsUpdated,

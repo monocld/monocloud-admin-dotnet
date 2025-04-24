@@ -27,19 +27,14 @@ public class PatchApiResourceRequest
    public Optional<string?> Description { get; set; }
 
    /// <summary>
-   /// Specifies whether this resource is shown in the discovery document.
-   /// </summary>
-   public Optional<bool> ShowInDiscoveryDocument { get; set; }
-
-   /// <summary>
    /// The audience that will be added to the outgoing access token.
    /// </summary>
    public Optional<string> Audience { get; set; }
 
    /// <summary>
-   /// List of API scope names.
+   /// Specifies whether the resource requires an exclusive access token.
    /// </summary>
-   public Optional<List<string>> Scopes { get; set; }
+   public Optional<bool> RequireExclusiveToken { get; set; }
 
    /// <summary>
    /// List of associated user claim types that should be included in the Access token.

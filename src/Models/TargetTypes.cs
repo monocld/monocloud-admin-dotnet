@@ -94,6 +94,11 @@ public enum TargetTypes
   Scope,
 
   /// <summary>
+  /// An Api Scope
+  /// </summary>
+  ApiScope,
+
+  /// <summary>
   /// A Key Material
   /// </summary>
   KeyMaterial,

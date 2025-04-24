@@ -29,11 +29,6 @@ public class ApiResource
    public string? Description { get; set; }
 
    /// <summary>
-   /// Specifies whether this resource is shown in the discovery document.
-   /// </summary>
-   public bool ShowInDiscoveryDocument { get; set; }
-
-   /// <summary>
    /// Specifies the creation time of the resource (in Epoch).
    /// </summary>
    public DateTime CreationTime { get; set; }
@@ -49,9 +44,9 @@ public class ApiResource
    public string Audience { get; set; }
 
    /// <summary>
-   /// List of API scope names.
+   /// Specifies whether the resource requires an exclusive access token.
    /// </summary>
-   public List<string> Scopes { get; set; }
+   public bool RequireExclusiveToken { get; set; }
 
    /// <summary>
    /// List of associated user claim types that should be included in the Access token.

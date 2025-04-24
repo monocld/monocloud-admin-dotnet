@@ -54,16 +54,6 @@ public class ClaimResource
    public string Source { get; set; }
 
    /// <summary>
-   /// Specifies whether the user can de-select the claim on the consent screen (if such a feature is implemented in the consent screen).
-   /// </summary>
-   public bool Required { get; set; }
-
-   /// <summary>
-   /// Specifies whether the consent screen will emphasize this claim (if such a feature is implemented in the consent screen). Use this setting for sensitive or important scopes.
-   /// </summary>
-   public bool Emphasize { get; set; }
-
-   /// <summary>
    /// Specifies whether it&#39;s a built-in claim resource.
    /// </summary>
    public bool IsDefault { get; set; }

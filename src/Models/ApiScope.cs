@@ -4,9 +4,9 @@ using System.Collections.Generic;
 namespace MonoCloud.SDK.Admin.Models;
 
 /// <summary>
-/// The Scope Resource response class
+/// The Api Scope Resource response class
 /// </summary>
-public class Scope
+public class ApiScope
 {
    /// <summary>
    /// Unique ID of the Resource
@@ -27,11 +27,6 @@ public class Scope
    /// A brief description about the Resource
    /// </summary>
    public string? Description { get; set; }
-
-   /// <summary>
-   /// Specifies whether this resource is shown in the discovery document.
-   /// </summary>
-   public bool ShowInDiscoveryDocument { get; set; }
 
    /// <summary>
    /// Specifies the creation time of the resource (in Epoch).
@@ -59,14 +54,19 @@ public class Scope
    public bool Emphasize { get; set; }
 
    /// <summary>
-   /// Specifies whether it&#39;s a built-in identity scope.
+   /// Specifies whether the scopes will automatically added to the token when the scope parameter is empty.
    /// </summary>
    public bool IsDefault { get; set; }
 
    /// <summary>
-   /// List of associated user claim types that should be included in the Identity token or as returned from the User Info Endpoint.
+   /// List of associated user claim types that should be included in the Access Token.
    /// </summary>
-   public List<ScopeClaim> UserClaims { get; set; }
+   public List<string> UserClaims { get; set; }
+
+   /// <summary>
+   /// Specifies whether this resource is shown in the discovery document.
+   /// </summary>
+   public bool ShowInDiscoveryDocument { get; set; }
 }
 
 

@@ -40,16 +40,6 @@ public class PatchClaimResourceRequest
    /// Specifies the source of the claim.
    /// </summary>
    public Optional<string> Source { get; set; }
-
-   /// <summary>
-   /// Specifies whether the user can de-select the claim on the consent screen (if such a feature is implemented in the consent screen).
-   /// </summary>
-   public Optional<bool> Required { get; set; }
-
-   /// <summary>
-   /// Specifies whether the consent screen will emphasize this claim (if such a feature is implemented in the consent screen). Use this setting for sensitive or important scopes.
-   /// </summary>
-   public Optional<bool> Emphasize { get; set; }
 }
 
 
