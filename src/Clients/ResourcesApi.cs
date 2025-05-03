@@ -631,58 +631,6 @@ public class ResourcesClient : MonoCloudClientBase
   }
 
   /// <summary>
-  /// Create an Api Resource Client Association
-  /// </summary>
-  /// <param name="resourceId">Api Resource Id</param>
-  /// <param name="clientId">Client Id</param>
-  /// <param name="createApiResourceClientRequest">Request Body</param>
-  /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
-  /// <returns>ApiResourceClient</returns>
-  /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<ApiResourceClient>> CreateApiResourceClientAsync(string resourceId, string clientId, CreateApiResourceClientRequest createApiResourceClientRequest, CancellationToken cancellationToken = default)
-  { 
-    if (resourceId == null)
-    {
-      throw new ArgumentNullException(nameof(resourceId));
-    }
-    
-    if (clientId == null)
-    {
-      throw new ArgumentNullException(nameof(clientId));
-    }
-    
-    if (createApiResourceClientRequest == null)
-    {
-      throw new ArgumentNullException(nameof(createApiResourceClientRequest));
-    }
-    
-    var encodedResourceId = HttpUtility.UrlEncode(resourceId);
-
-    var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"resources/api_resources/{encodedResourceId}/clients?");
-
-    if (clientId != null)
-    {
-      urlBuilder.Append(Uri.EscapeDataString("clientId") + "=").Append(HttpUtility.UrlEncode(clientId)).Append("&");
-    }
-
-    urlBuilder.Length--;
-
-    var request = new HttpRequestMessage
-    {
-      Method = new HttpMethod("POST"),
-      RequestUri = new Uri(urlBuilder.ToString(), UriKind.RelativeOrAbsolute),
-      Content = new StringContent(Serialize(createApiResourceClientRequest), Encoding.UTF8, "application/json"),
-      Headers =
-      {
-        { "Accept", "application/json" }
-      }
-    };
-
-    return ProcessRequestAsync<ApiResourceClient>(request, cancellationToken);
-  }
-
-  /// <summary>
   /// Find an Api Resource Client Association
   /// </summary>
   /// <param name="resourceId">Api Resource Id</param>
@@ -715,6 +663,55 @@ public class ResourcesClient : MonoCloudClientBase
     {
       Method = new HttpMethod("GET"),
       RequestUri = new Uri(urlBuilder.ToString(), UriKind.RelativeOrAbsolute),
+      Headers =
+      {
+        { "Accept", "application/json" }
+      }
+    };
+
+    return ProcessRequestAsync<ApiResourceClient>(request, cancellationToken);
+  }
+
+  /// <summary>
+  /// Create an Api Resource Client Association
+  /// </summary>
+  /// <param name="resourceId">Api Resource Id</param>
+  /// <param name="clientId">Client Id</param>
+  /// <param name="createApiResourceClientRequest">Request Body</param>
+  /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+  /// <returns>ApiResourceClient</returns>
+  /// <exception cref="MonoCloudException">A server side error occurred.</exception>
+  public Task<MonoCloudResponse<ApiResourceClient>> CreateApiResourceClientAsync(string resourceId, string clientId, CreateApiResourceClientRequest createApiResourceClientRequest, CancellationToken cancellationToken = default)
+  { 
+    if (resourceId == null)
+    {
+      throw new ArgumentNullException(nameof(resourceId));
+    }
+    
+    if (clientId == null)
+    {
+      throw new ArgumentNullException(nameof(clientId));
+    }
+    
+    if (createApiResourceClientRequest == null)
+    {
+      throw new ArgumentNullException(nameof(createApiResourceClientRequest));
+    }
+    
+    var encodedResourceId = HttpUtility.UrlEncode(resourceId);
+
+    var encodedClientId = HttpUtility.UrlEncode(clientId);
+
+    var urlBuilder = new StringBuilder();
+    urlBuilder.Append($"resources/api_resources/{encodedResourceId}/clients/{encodedClientId}?");
+
+    urlBuilder.Length--;
+
+    var request = new HttpRequestMessage
+    {
+      Method = new HttpMethod("POST"),
+      RequestUri = new Uri(urlBuilder.ToString(), UriKind.RelativeOrAbsolute),
+      Content = new StringContent(Serialize(createApiResourceClientRequest), Encoding.UTF8, "application/json"),
       Headers =
       {
         { "Accept", "application/json" }
