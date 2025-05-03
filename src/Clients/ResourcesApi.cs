@@ -527,6 +527,58 @@ public class ResourcesClient : MonoCloudClientBase
   }
 
   /// <summary>
+  /// Get all the Client Api Resource Associations
+  /// </summary>
+  /// <param name="clientId">Api Resource Id</param>
+  /// <param name="page">Page Number</param>
+  /// <param name="size">Page Size</param>
+  /// <param name="sort">Value in &#39;sort_key:sort_order&#39; format, by which results will be sorted. Sort order value can be &#39;1&#39; for ascending and &#39;-1&#39; for descending.  Acceptable sort key values are &#39;client_id&#39;, &#39;creation_time&#39; and &#39;last_updated&#39;</param>
+  /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+  /// <returns>List&lt;ApiResourceClient&gt;</returns>
+  /// <exception cref="MonoCloudException">A server side error occurred.</exception>
+  public Task<MonoCloudResponse<List<ApiResourceClient>, PageModel>> GetAllClientApiResourcesAsync(string clientId, int? page = 1, int? size = 10, string? sort = default, CancellationToken cancellationToken = default)
+  { 
+    if (clientId == null)
+    {
+      throw new ArgumentNullException(nameof(clientId));
+    }
+    
+    var encodedClientId = HttpUtility.UrlEncode(clientId);
+
+    var urlBuilder = new StringBuilder();
+    urlBuilder.Append($"resources/api_resources/clients/{encodedClientId}?");
+
+    if (page != null)
+    {
+      urlBuilder.Append(Uri.EscapeDataString("page") + "=").Append(HttpUtility.UrlEncode(page.ToString())).Append("&");
+    }
+
+    if (size != null)
+    {
+      urlBuilder.Append(Uri.EscapeDataString("size") + "=").Append(HttpUtility.UrlEncode(size.ToString())).Append("&");
+    }
+
+    if (sort != null)
+    {
+      urlBuilder.Append(Uri.EscapeDataString("sort") + "=").Append(HttpUtility.UrlEncode(sort)).Append("&");
+    }
+
+    urlBuilder.Length--;
+
+    var request = new HttpRequestMessage
+    {
+      Method = new HttpMethod("GET"),
+      RequestUri = new Uri(urlBuilder.ToString(), UriKind.RelativeOrAbsolute),
+      Headers =
+      {
+        { "Accept", "application/json" }
+      }
+    };
+
+    return ProcessRequestAsync<List<ApiResourceClient>, PageModel>(request, cancellationToken);
+  }
+
+  /// <summary>
   /// Get all the Api Resource Client Associations
   /// </summary>
   /// <param name="resourceId">Api Resource Id</param>

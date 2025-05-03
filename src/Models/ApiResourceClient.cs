@@ -9,6 +9,11 @@ namespace MonoCloud.SDK.Admin.Models;
 public class ApiResourceClient
 {
    /// <summary>
+   /// The resource Id
+   /// </summary>
+   public string ResourceId { get; set; }
+
+   /// <summary>
    /// The client ID
    /// </summary>
    public string ClientId { get; set; }
