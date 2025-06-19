@@ -40,9 +40,9 @@ public class MonoCloudAdminClient
   public ResourcesClient Resources { get; }
 
   /// <summary>
-  /// Gets the TrustStoreClient instance to interact with the TrustStore Api endpoints
+  /// Gets the TrustStoresClient instance to interact with the TrustStores Api endpoints
   /// </summary>
-  public TrustStoreClient TrustStore { get; }
+  public TrustStoresClient TrustStores { get; }
 
   /// <summary>
   /// Initializes the MonoCloud Admin Client Class
@@ -56,7 +56,7 @@ public class MonoCloudAdminClient
     Logs = new LogsClient(configuration);
     Options = new OptionsClient(configuration);
     Resources = new ResourcesClient(configuration);
-    TrustStore = new TrustStoreClient(configuration);
+    TrustStores = new TrustStoresClient(configuration);
   }
 
 
@@ -72,6 +72,6 @@ public class MonoCloudAdminClient
     Logs = new LogsClient(httpClient);
     Options = new OptionsClient(httpClient);
     Resources = new ResourcesClient(httpClient);
-    TrustStore = new TrustStoreClient(httpClient);
+    TrustStores = new TrustStoresClient(httpClient);
   }
 }
