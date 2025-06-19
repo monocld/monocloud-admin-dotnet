@@ -127,11 +127,19 @@ public enum EventCodes
 
     ApiResourceClientUpdated,
 
-    TrustStoreCertificatesUpdated,
+    TrustStoreCreated,
 
-    TrustStoreRevocationsUpdated,
+    TrustStoreUpdated,
 
-    TrustStoreBannedThumbprintsUpdated,
+    TrustStoreDeleted,
+
+    TrustStoreCertificateBanned,
+
+    TrustStoreCertificateUnbanned,
+
+    TrustStoreRevocationAdded,
+
+    TrustStoreRevocationRemoved,
 
     ClientCreated,
 

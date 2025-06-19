@@ -4,12 +4,12 @@ using System.Collections.Generic;
 namespace MonoCloud.SDK.Admin.Models;
 
 /// <summary>
-/// Update Revocation Request.
+/// Add Certificate Revocation Request.
 /// </summary>
-public class UpdateTrustStoreRevocationRequest
+public class AddCertificateRevocationRequest
 {
    /// <summary>
-   /// Certificate Crl Value.
+   /// Crl Pem Value.
    /// </summary>
    public string Value { get; set; }
 }
