@@ -17,6 +17,11 @@ public class PatchTrustStoreRequest
    public Optional<string> Name { get; set; }
 
    /// <summary>
+   /// Specifies if the trust store is enabled.
+   /// </summary>
+   public Optional<bool> Enabled { get; set; }
+
+   /// <summary>
    /// Specifies if the specific trust store metadata should be shown in the discovery endpoint.
    /// </summary>
    public Optional<bool> ShowInDiscoveryDocument { get; set; }
