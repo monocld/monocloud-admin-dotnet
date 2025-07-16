@@ -47,11 +47,6 @@ public class TrustStoreBasic
    /// Specifies the last update time of the trust store (in Epoch).
    /// </summary>
    public DateTime LastUpdated { get; set; }
-
-   /// <summary>
-   /// Specifies the trust store status.
-   /// </summary>
-   public TrustStoreStatus Status { get; set; }
 }
 
 
