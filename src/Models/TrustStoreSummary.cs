@@ -4,9 +4,9 @@ using System.Collections.Generic;
 namespace MonoCloud.SDK.Admin.Models;
 
 /// <summary>
-/// Trust Store Basic Response
+/// Trust Store Summary Response
 /// </summary>
-public class TrustStoreBasic
+public class TrustStoreSummary
 {
    /// <summary>
    /// Id of the trust store
