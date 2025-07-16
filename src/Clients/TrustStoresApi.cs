@@ -262,9 +262,9 @@ public class TrustStoresClient : MonoCloudClientBase
   /// <param name="size">Page Size</param>
   /// <param name="sort">Value in &#39;sort_key:sort_order&#39; format, by which results will be sorted. Sort order value can be &#39;1&#39; for ascending and &#39;-1&#39; for descending.  Acceptable sort key values are &#39;name&#39;, &#39;creation_time&#39;, and &#39;last_updated&#39;</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
-  /// <returns>List&lt;CertificateRevocation&gt;</returns>
+  /// <returns>List&lt;RevocationGrouped&gt;</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<List<CertificateRevocation>, PageModel>> GetAllRevocationsAsync(string trustStoreId, int? page = 1, int? size = 10, string? sort = default, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<List<RevocationGrouped>, PageModel>> GetAllRevocationsAsync(string trustStoreId, int? page = 1, int? size = 10, string? sort = default, CancellationToken cancellationToken = default)
   { 
     if (trustStoreId == null)
     {
@@ -303,7 +303,7 @@ public class TrustStoresClient : MonoCloudClientBase
       }
     };
 
-    return ProcessRequestAsync<List<CertificateRevocation>, PageModel>(request, cancellationToken);
+    return ProcessRequestAsync<List<RevocationGrouped>, PageModel>(request, cancellationToken);
   }
 
   /// <summary>

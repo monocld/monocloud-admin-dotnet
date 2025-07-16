@@ -4,9 +4,9 @@ using System.Collections.Generic;
 namespace MonoCloud.SDK.Admin.Models;
 
 /// <summary>
-/// Certificate Revocation Response
+/// The Revocation Grouped response
 /// </summary>
-public class CertificateRevocation
+public class RevocationGrouped
 {
    /// <summary>
    /// Revocation Id.
@@ -37,6 +37,16 @@ public class CertificateRevocation
    /// Specifies the creation time of the revocation (in Epoch).
    /// </summary>
    public DateTime CreationTime { get; set; }
+
+   /// <summary>
+   /// The crl number.
+   /// </summary>
+   public int? CrlNumber { get; set; }
+
+   /// <summary>
+   /// List of delta revocations.
+   /// </summary>
+   public List<DeltaRevocation> Deltas { get; set; }
 }
 
 
