@@ -29,7 +29,7 @@ public class PatchTrustStoreOptionsRequest
    /// <summary>
    /// Specifies which X509 certificate in the chain should be checked for revocation.
    /// </summary>
-   public Optional<X509RevocationFlag> RevocationFlag { get; set; }
+   public Optional<RevocationCheckDepth> RevocationCheckDepth { get; set; }
 
    /// <summary>
    /// Specifies the skew in seconds for the CRL issued date and OCSP validation.
@@ -44,7 +44,7 @@ public class PatchTrustStoreOptionsRequest
    /// <summary>
    /// Specifies the timeout in seconds for the Certificate Distribution Point to respond to the request.
    /// </summary>
-   public Optional<int> CrlCheckTimeout { get; set; }
+   public Optional<int> OnlineCrlCheckTimeout { get; set; }
 
    /// <summary>
    /// Specifies the cache duration in seconds for the Certificate Authentication.
@@ -54,7 +54,7 @@ public class PatchTrustStoreOptionsRequest
    /// <summary>
    /// Specifies the cache duration in seconds for the downloaded CRL.
    /// </summary>
-   public Optional<int> CrlCacheDuration { get; set; }
+   public Optional<int> OnlineCrlCacheDuration { get; set; }
 
    /// <summary>
    /// Specifies the cache duration in seconds for the OCSP response.
