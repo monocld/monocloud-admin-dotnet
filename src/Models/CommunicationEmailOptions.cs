@@ -14,9 +14,9 @@ public class CommunicationEmailOptions
    public CommunicationEmailSendGridOptions? SendGrid { get; set; }
 
    /// <summary>
-   /// Use the the internal keys to send Emails
+   /// Provider used to send Emails
    /// </summary>
-   public bool UseInternalKeys { get; set; }
+   public EmailProviders Provider { get; set; }
 
    /// <summary>
    /// Default email address from where the emails will be sent.

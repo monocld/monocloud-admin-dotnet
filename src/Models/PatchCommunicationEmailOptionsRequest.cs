@@ -17,9 +17,9 @@ public class PatchCommunicationEmailOptionsRequest
    public Optional<PatchCommunicationEmailSendGridOptionsRequest?> SendGrid { get; set; }
 
    /// <summary>
-   /// Use the the internal keys to send Emails
+   /// Provider used to send Emails
    /// </summary>
-   public Optional<bool> UseInternalKeys { get; set; }
+   public Optional<EmailProviders> Provider { get; set; }
 
    /// <summary>
    /// From Email Address

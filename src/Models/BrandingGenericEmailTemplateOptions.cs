@@ -9,9 +9,9 @@ namespace MonoCloud.SDK.Admin.Models;
 public class BrandingGenericEmailTemplateOptions
 {
    /// <summary>
-   /// Specifies whether to use the custom template.
+   /// Specifies whether notifications should be send internally.
    /// </summary>
-   public bool UseCustomTemplate { get; set; }
+   public bool SendNotifications { get; set; }
 
    /// <summary>
    /// Specifies the text to be used as the email subject

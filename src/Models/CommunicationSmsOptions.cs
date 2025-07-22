@@ -14,9 +14,9 @@ public class CommunicationSmsOptions
    public CommunicationSmsTwilioOptions? Twilio { get; set; }
 
    /// <summary>
-   /// Use the the internal keys to send Sms
+   /// Provider used to send Sms
    /// </summary>
-   public bool UseInternalKeys { get; set; }
+   public SmsProviders Provider { get; set; }
 }
 
 

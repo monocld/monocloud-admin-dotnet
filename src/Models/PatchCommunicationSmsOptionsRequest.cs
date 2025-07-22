@@ -17,9 +17,9 @@ public class PatchCommunicationSmsOptionsRequest
    public Optional<PatchCommunicationSmsTwilioOptionsRequest?> Twilio { get; set; }
 
    /// <summary>
-   /// Use the the internal keys to send Sms
+   /// Provider used to send Sms
    /// </summary>
-   public Optional<bool> UseInternalKeys { get; set; }
+   public Optional<SmsProviders> Provider { get; set; }
 }
 
 
