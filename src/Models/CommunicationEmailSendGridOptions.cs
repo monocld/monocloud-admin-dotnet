@@ -12,6 +12,16 @@ public class CommunicationEmailSendGridOptions
    /// SendGrid Api Key
    /// </summary>
    public string ApiKey { get; set; }
+
+   /// <summary>
+   /// From Email Address
+   /// </summary>
+   public string FromEmail { get; set; }
+
+   /// <summary>
+   /// From Name
+   /// </summary>
+   public string? FromName { get; set; }
 }
 
 

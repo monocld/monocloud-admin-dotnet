@@ -15,6 +15,16 @@ public class PatchCommunicationEmailSendGridOptionsRequest
    /// SendGrid Api Key
    /// </summary>
    public Optional<string> ApiKey { get; set; }
+
+   /// <summary>
+   /// From Email Address
+   /// </summary>
+   public Optional<string> FromEmail { get; set; }
+
+   /// <summary>
+   /// From Name
+   /// </summary>
+   public Optional<string?> FromName { get; set; }
 }
 
 

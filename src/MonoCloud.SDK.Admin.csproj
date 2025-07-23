@@ -7,7 +7,7 @@
     <Nullable>enable</Nullable>
     <SignAssembly>true</SignAssembly>
     <PackageId>MonoCloud.SDK.Admin</PackageId>
-    <Version>0.4.4</Version>
+    <Version>0.4.5</Version>
     <Company>MonoCloud</Company>
     <Product>MonoCloud.SDK.Admin</Product>
     <AssemblyName>MonoCloud.SDK.Admin</AssemblyName>

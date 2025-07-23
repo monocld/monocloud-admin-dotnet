@@ -20,16 +20,6 @@ public class PatchCommunicationEmailOptionsRequest
    /// Provider used to send Emails
    /// </summary>
    public Optional<EmailProviders> Provider { get; set; }
-
-   /// <summary>
-   /// From Email Address
-   /// </summary>
-   public Optional<string?> FromEmail { get; set; }
-
-   /// <summary>
-   /// From Name
-   /// </summary>
-   public Optional<string?> FromName { get; set; }
 }
 
 

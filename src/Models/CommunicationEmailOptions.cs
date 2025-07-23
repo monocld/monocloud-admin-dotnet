@@ -22,16 +22,6 @@ public class CommunicationEmailOptions
    /// Default email address from where the emails will be sent.
    /// </summary>
    public string DefaultFromEmail { get; set; }
-
-   /// <summary>
-   /// From Email Address
-   /// </summary>
-   public string? FromEmail { get; set; }
-
-   /// <summary>
-   /// From Name
-   /// </summary>
-   public string? FromName { get; set; }
 }
 
 
