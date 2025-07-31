@@ -15,7 +15,9 @@ public enum SecretTypes
 
     X509CertificateBase64,
 
-    Jwk
+    Jwk,
+
+    JwtAssertionSharedSecret
 }
 
 

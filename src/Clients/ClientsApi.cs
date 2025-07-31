@@ -41,21 +41,21 @@ public class ClientsClient : MonoCloudClientBase
   /// <summary>
   /// Find a Client by Id
   /// </summary>
-  /// <param name="id">Client Id</param>
+  /// <param name="clientId">Client Id</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>Client</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<Client>> FindClientByIdAsync(string id, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<Client>> FindClientByIdAsync(string clientId, CancellationToken cancellationToken = default)
   { 
-    if (id == null)
+    if (clientId == null)
     {
-      throw new ArgumentNullException(nameof(id));
+      throw new ArgumentNullException(nameof(clientId));
     }
     
-    var encodedId = HttpUtility.UrlEncode(id);
+    var encodedClientId = HttpUtility.UrlEncode(clientId);
 
     var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"clients/{encodedId}?");
+    urlBuilder.Append($"clients/{encodedClientId}?");
 
     urlBuilder.Length--;
 
@@ -75,21 +75,21 @@ public class ClientsClient : MonoCloudClientBase
   /// <summary>
   /// Delete a Client
   /// </summary>
-  /// <param name="id">Client Id</param>
+  /// <param name="clientId">Client Id</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns></returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse> DeleteClientAsync(string id, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse> DeleteClientAsync(string clientId, CancellationToken cancellationToken = default)
   { 
-    if (id == null)
+    if (clientId == null)
     {
-      throw new ArgumentNullException(nameof(id));
+      throw new ArgumentNullException(nameof(clientId));
     }
     
-    var encodedId = HttpUtility.UrlEncode(id);
+    var encodedClientId = HttpUtility.UrlEncode(clientId);
 
     var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"clients/{encodedId}?");
+    urlBuilder.Append($"clients/{encodedClientId}?");
 
     urlBuilder.Length--;
 
@@ -105,16 +105,16 @@ public class ClientsClient : MonoCloudClientBase
   /// <summary>
   /// Update a Client
   /// </summary>
-  /// <param name="id">Client Id</param>
+  /// <param name="clientId">Client Id</param>
   /// <param name="patchClientRequest">Request Body</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>Client</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<Client>> PatchClientAsync(string id, PatchClientRequest patchClientRequest, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<Client>> PatchClientAsync(string clientId, PatchClientRequest patchClientRequest, CancellationToken cancellationToken = default)
   { 
-    if (id == null)
+    if (clientId == null)
     {
-      throw new ArgumentNullException(nameof(id));
+      throw new ArgumentNullException(nameof(clientId));
     }
     
     if (patchClientRequest == null)
@@ -122,10 +122,10 @@ public class ClientsClient : MonoCloudClientBase
       throw new ArgumentNullException(nameof(patchClientRequest));
     }
     
-    var encodedId = HttpUtility.UrlEncode(id);
+    var encodedClientId = HttpUtility.UrlEncode(clientId);
 
     var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"clients/{encodedId}?");
+    urlBuilder.Append($"clients/{encodedClientId}?");
 
     urlBuilder.Length--;
 
