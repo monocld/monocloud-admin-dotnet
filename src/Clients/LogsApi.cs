@@ -91,21 +91,21 @@ public class LogsClient : MonoCloudClientBase
   /// <summary>
   /// Find a Log by Id
   /// </summary>
-  /// <param name="id">Log Id</param>
+  /// <param name="logId">Log Id</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>Log</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<Log>> FindLogByIdAsync(Guid id, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<Log>> FindLogByIdAsync(Guid logId, CancellationToken cancellationToken = default)
   { 
-    if (id == null)
+    if (logId == null)
     {
-      throw new ArgumentNullException(nameof(id));
+      throw new ArgumentNullException(nameof(logId));
     }
     
-    var encodedId = HttpUtility.UrlEncode(id.ToString());
+    var encodedLogId = HttpUtility.UrlEncode(logId.ToString());
 
     var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"logs/{encodedId}?");
+    urlBuilder.Append($"logs/{encodedLogId}?");
 
     urlBuilder.Length--;
 

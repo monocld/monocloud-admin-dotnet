@@ -9,6 +9,11 @@ namespace MonoCloud.SDK.Admin.Models;
 public class BrandingPageOptions
 {
    /// <summary>
+   /// Specifies whether or not the MonoCloud watermark will be shown on the login pages
+   /// </summary>
+   public bool ShowWatermark { get; set; }
+
+   /// <summary>
    /// Page Branding Logo Options
    /// </summary>
    public BrandingPageLogoOptions Logo { get; set; }

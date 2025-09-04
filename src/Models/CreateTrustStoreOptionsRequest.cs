@@ -9,7 +9,7 @@ namespace MonoCloud.SDK.Admin.Models;
 public class CreateTrustStoreOptionsRequest
 {
    /// <summary>
-   /// If set to true, will validates whether the certificate is intended for authentication
+   /// If set to true, will validate whether the certificate is intended for authentication
    /// </summary>
    public bool? ValidateCertificateUse { get; set; }
 

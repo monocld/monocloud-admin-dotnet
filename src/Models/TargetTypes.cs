@@ -24,6 +24,11 @@ public enum TargetTypes
   TenantKey,
 
   /// <summary>
+  /// Subscription
+  /// </summary>
+  Subscription,
+
+  /// <summary>
   /// A client
   /// </summary>
   Client,
