@@ -4,9 +4,9 @@ using System.Collections.Generic;
 namespace MonoCloud.SDK.Admin.Models;
 
 /// <summary>
-/// Ban Certificate Request.
+/// Banned Thumbprint Response
 /// </summary>
-public class BanTrustStoreCertificateRequest
+public class BannedThumbprint
 {
    /// <summary>
    /// Unique thumbprint of the certificate.
@@ -17,6 +17,11 @@ public class BanTrustStoreCertificateRequest
    /// Specifies the reason for banning the certificate.
    /// </summary>
    public string? Reason { get; set; }
+
+   /// <summary>
+   /// Specifies the creation time (in Epoch).
+   /// </summary>
+   public DateTime CreationTime { get; set; }
 }
 
 

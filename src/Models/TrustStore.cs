@@ -41,7 +41,7 @@ public class TrustStore
    /// <summary>
    /// A list of banned certificate thumbprints.
    /// </summary>
-   public List<string> BannedThumbprints { get; set; }
+   public List<BannedThumbprint> BannedThumbprints { get; set; }
 
    /// <summary>
    /// The Trust store options
