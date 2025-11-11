@@ -428,14 +428,48 @@ public class TrustStoresClient : MonoCloudClientBase
   }
 
   /// <summary>
+  /// Get All Banned Certificates
+  /// </summary>
+  /// <param name="trustStoreId">Trust Store Id</param>
+  /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
+  /// <returns>List&lt;BannedCertificate&gt;</returns>
+  /// <exception cref="MonoCloudException">A server side error occurred.</exception>
+  public Task<MonoCloudResponse<List<BannedCertificate>>> GetAllBannedCertificatesAsync(string trustStoreId, CancellationToken cancellationToken = default)
+  { 
+    if (trustStoreId == null)
+    {
+      throw new ArgumentNullException(nameof(trustStoreId));
+    }
+    
+    var encodedTrustStoreId = HttpUtility.UrlEncode(trustStoreId);
+
+    var urlBuilder = new StringBuilder();
+    urlBuilder.Append($"truststores/{encodedTrustStoreId}/banned_certificates?");
+
+    urlBuilder.Length--;
+
+    var request = new HttpRequestMessage
+    {
+      Method = new HttpMethod("GET"),
+      RequestUri = new Uri(urlBuilder.ToString(), UriKind.RelativeOrAbsolute),
+      Headers =
+      {
+        { "Accept", "application/json" }
+      }
+    };
+
+    return ProcessRequestAsync<List<BannedCertificate>>(request, cancellationToken);
+  }
+
+  /// <summary>
   /// Ban a certificate thumbprint
   /// </summary>
   /// <param name="trustStoreId">Trust Store Id</param>
   /// <param name="banTrustStoreCertificateRequest">Request Body</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
-  /// <returns>TrustStore</returns>
+  /// <returns>BannedCertificate</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<TrustStore>> BanTrustStoreCertificateAsync(string trustStoreId, BanTrustStoreCertificateRequest banTrustStoreCertificateRequest, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<BannedCertificate>> BanTrustStoreCertificateAsync(string trustStoreId, BanTrustStoreCertificateRequest banTrustStoreCertificateRequest, CancellationToken cancellationToken = default)
   { 
     if (trustStoreId == null)
     {
@@ -450,7 +484,7 @@ public class TrustStoresClient : MonoCloudClientBase
     var encodedTrustStoreId = HttpUtility.UrlEncode(trustStoreId);
 
     var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"truststores/{encodedTrustStoreId}/thumbprints?");
+    urlBuilder.Append($"truststores/{encodedTrustStoreId}/banned_certificates?");
 
     urlBuilder.Length--;
 
@@ -465,35 +499,35 @@ public class TrustStoresClient : MonoCloudClientBase
       }
     };
 
-    return ProcessRequestAsync<TrustStore>(request, cancellationToken);
+    return ProcessRequestAsync<BannedCertificate>(request, cancellationToken);
   }
 
   /// <summary>
   /// Unban a certificate thumbprint
   /// </summary>
   /// <param name="trustStoreId">Trust Store Id</param>
-  /// <param name="thumbprint">Thumbprint</param>
+  /// <param name="banId">Thumbprint</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns></returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse> UnbanTrustStoreCertificateAsync(string trustStoreId, string thumbprint, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse> UnbanTrustStoreCertificateAsync(string trustStoreId, string banId, CancellationToken cancellationToken = default)
   { 
     if (trustStoreId == null)
     {
       throw new ArgumentNullException(nameof(trustStoreId));
     }
     
-    if (thumbprint == null)
+    if (banId == null)
     {
-      throw new ArgumentNullException(nameof(thumbprint));
+      throw new ArgumentNullException(nameof(banId));
     }
     
     var encodedTrustStoreId = HttpUtility.UrlEncode(trustStoreId);
 
-    var encodedThumbprint = HttpUtility.UrlEncode(thumbprint);
+    var encodedBanId = HttpUtility.UrlEncode(banId);
 
     var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"truststores/{encodedTrustStoreId}/encodedThumbprints/{encodedThumbprint}?");
+    urlBuilder.Append($"truststores/{encodedTrustStoreId}/banned_certificates/{encodedBanId}?");
 
     urlBuilder.Length--;
 

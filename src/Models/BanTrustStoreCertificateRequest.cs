@@ -9,9 +9,17 @@ namespace MonoCloud.SDK.Admin.Models;
 public class BanTrustStoreCertificateRequest
 {
    /// <summary>
-   /// Thumbprint of the certificate to be banned
+   /// Unique thumbprint of the certificate.
    /// </summary>
-   public string Thumbprint { get; set; }
+   public string Value { get; set; }
+
+   /// <summary>
+   /// Specifies the reason for banning the certificate.
+   /// </summary>
+   public string? Reason { get; set; }
+
+   
+   public BannedCertificateType? Type { get; set; }
 }
 
 

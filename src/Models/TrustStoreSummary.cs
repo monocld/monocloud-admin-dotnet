@@ -34,9 +34,9 @@ public class TrustStoreSummary
    public int CertificateCount { get; set; }
 
    /// <summary>
-   /// Specifies the number of banned thumbprints in the store.
+   /// Specifies the number of banned certificates in the store.
    /// </summary>
-   public int BannedThumbprintsCount { get; set; }
+   public int BannedCertificatesCount { get; set; }
 
    /// <summary>
    /// Specifies the creation time of the trust store (in Epoch).

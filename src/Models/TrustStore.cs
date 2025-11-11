@@ -39,11 +39,6 @@ public class TrustStore
    public string CertChain { get; set; }
 
    /// <summary>
-   /// A list of banned certificate thumbprints.
-   /// </summary>
-   public List<string> BannedThumbprints { get; set; }
-
-   /// <summary>
    /// The Trust store options
    /// </summary>
    public TrustStoreOptions Options { get; set; }
