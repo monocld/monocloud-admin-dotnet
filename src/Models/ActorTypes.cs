@@ -51,7 +51,12 @@ public enum ActorTypes
   /// <summary>
   /// Client
   /// </summary>
-  Client
+  Client,
+
+  /// <summary>
+  /// Certificate
+  /// </summary>
+  Certificate
 }
 
 
