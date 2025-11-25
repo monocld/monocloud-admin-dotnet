@@ -53,7 +53,9 @@ public enum EventCodes
 
     TokenIntrospectionSuccess,
 
-    TokenRevoked,
+    TokenRevocationSuccess,
+
+    TokenRevocationFailure,
 
     ConsentGranted,
 

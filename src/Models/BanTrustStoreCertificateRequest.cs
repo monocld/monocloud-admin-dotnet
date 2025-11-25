@@ -18,7 +18,9 @@ public class BanTrustStoreCertificateRequest
    /// </summary>
    public string? Reason { get; set; }
 
-   
+   /// <summary>
+   /// Specifies the type of the banned certificate.
+   /// </summary>
    public BannedCertificateType? Type { get; set; }
 }
 
