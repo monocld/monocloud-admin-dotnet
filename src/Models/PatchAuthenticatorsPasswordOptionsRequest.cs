@@ -22,11 +22,6 @@ public class PatchAuthenticatorsPasswordOptionsRequest
    public Optional<bool> EnableSignUp { get; set; }
 
    /// <summary>
-   /// Specifies whether to notify the user on successful password update through email.
-   /// </summary>
-   public Optional<bool> EnablePasswordUpdatedEmail { get; set; }
-
-   /// <summary>
    /// If enabled password will be prompted on the same screen as the username.
    /// </summary>
    public Optional<bool> PromptPasswordOnInitialScreen { get; set; }

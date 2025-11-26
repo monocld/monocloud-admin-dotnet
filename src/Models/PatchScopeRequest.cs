@@ -12,11 +12,6 @@ namespace MonoCloud.SDK.Admin.Models;
 public class PatchScopeRequest
 {
    /// <summary>
-   /// Specifies if the resource is enabled.
-   /// </summary>
-   public Optional<bool> Enabled { get; set; }
-
-   /// <summary>
    /// Display Name for the Resource
    /// </summary>
    public Optional<string?> DisplayName { get; set; }

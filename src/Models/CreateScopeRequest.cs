@@ -9,11 +9,6 @@ namespace MonoCloud.SDK.Admin.Models;
 public class CreateScopeRequest
 {
    /// <summary>
-   /// Specifies if the resource is enabled.
-   /// </summary>
-   public bool? Enabled { get; set; }
-
-   /// <summary>
    /// Display Name for the Resource
    /// </summary>
    public string? DisplayName { get; set; }
