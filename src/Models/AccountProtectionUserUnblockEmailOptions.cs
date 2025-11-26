@@ -9,11 +9,6 @@ namespace MonoCloud.SDK.Admin.Models;
 public class AccountProtectionUserUnblockEmailOptions
 {
    /// <summary>
-   /// Enable User Unblock through Email.
-   /// </summary>
-   public bool Enabled { get; set; }
-
-   /// <summary>
    /// Email expiration time in seconds.
    /// </summary>
    public int Expiry { get; set; }

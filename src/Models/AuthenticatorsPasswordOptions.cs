@@ -19,11 +19,6 @@ public class AuthenticatorsPasswordOptions
    public bool EnableSignUp { get; set; }
 
    /// <summary>
-   /// Specifies whether to notify the user on successful password update through email.
-   /// </summary>
-   public bool EnablePasswordUpdatedEmail { get; set; }
-
-   /// <summary>
    /// If enabled password will be prompted on the same screen as the username.
    /// </summary>
    public bool PromptPasswordOnInitialScreen { get; set; }

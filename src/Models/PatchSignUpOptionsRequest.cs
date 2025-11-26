@@ -32,11 +32,6 @@ public class PatchSignUpOptionsRequest
    public Optional<string?> TermsUrl { get; set; }
 
    /// <summary>
-   /// Send an email to user at the time of signup.
-   /// </summary>
-   public Optional<bool> EnableWelcomeEmail { get; set; }
-
-   /// <summary>
    /// The whitelist Restriction Options.
    /// </summary>
    public Optional<PatchSignUpRestrictionsOptionsRequest> Whitelist { get; set; }

@@ -34,11 +34,6 @@ public class SignUpOptions
    public string? TermsUrl { get; set; }
 
    /// <summary>
-   /// Send an email to user at the time of signup.
-   /// </summary>
-   public bool EnableWelcomeEmail { get; set; }
-
-   /// <summary>
    /// The whitelist Restriction Options.
    /// </summary>
    public SignUpGenericRestrictionsOptions Whitelist { get; set; }
