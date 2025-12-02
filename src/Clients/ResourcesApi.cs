@@ -41,21 +41,21 @@ public class ResourcesClient : MonoCloudClientBase
   /// <summary>
   /// Find an Api Resource by Id
   /// </summary>
-  /// <param name="id">Api Resource Id</param>
+  /// <param name="apiId">API Id</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>ApiResource</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<ApiResource>> FindApiResourceByIdAsync(string id, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<ApiResource>> FindApiResourceByIdAsync(string apiId, CancellationToken cancellationToken = default)
   { 
-    if (id == null)
+    if (apiId == null)
     {
-      throw new ArgumentNullException(nameof(id));
+      throw new ArgumentNullException(nameof(apiId));
     }
     
-    var encodedId = HttpUtility.UrlEncode(id);
+    var encodedApiId = HttpUtility.UrlEncode(apiId);
 
     var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"resources/api_resources/{encodedId}?");
+    urlBuilder.Append($"resources/api_resources/{encodedApiId}?");
 
     urlBuilder.Length--;
 
@@ -75,21 +75,21 @@ public class ResourcesClient : MonoCloudClientBase
   /// <summary>
   /// Delete an Api Resource
   /// </summary>
-  /// <param name="id">Api Resource Id</param>
+  /// <param name="apiId">API Id</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns></returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse> DeleteApiResourceAsync(string id, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse> DeleteApiResourceAsync(string apiId, CancellationToken cancellationToken = default)
   { 
-    if (id == null)
+    if (apiId == null)
     {
-      throw new ArgumentNullException(nameof(id));
+      throw new ArgumentNullException(nameof(apiId));
     }
     
-    var encodedId = HttpUtility.UrlEncode(id);
+    var encodedApiId = HttpUtility.UrlEncode(apiId);
 
     var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"resources/api_resources/{encodedId}?");
+    urlBuilder.Append($"resources/api_resources/{encodedApiId}?");
 
     urlBuilder.Length--;
 
@@ -105,16 +105,16 @@ public class ResourcesClient : MonoCloudClientBase
   /// <summary>
   /// Update an Api Resource
   /// </summary>
-  /// <param name="id">Api Resource Id</param>
+  /// <param name="apiId">API Id</param>
   /// <param name="patchApiResourceRequest">Request Body</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>ApiResource</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<ApiResource>> PatchApiResourceAsync(string id, PatchApiResourceRequest patchApiResourceRequest, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<ApiResource>> PatchApiResourceAsync(string apiId, PatchApiResourceRequest patchApiResourceRequest, CancellationToken cancellationToken = default)
   { 
-    if (id == null)
+    if (apiId == null)
     {
-      throw new ArgumentNullException(nameof(id));
+      throw new ArgumentNullException(nameof(apiId));
     }
     
     if (patchApiResourceRequest == null)
@@ -122,10 +122,10 @@ public class ResourcesClient : MonoCloudClientBase
       throw new ArgumentNullException(nameof(patchApiResourceRequest));
     }
     
-    var encodedId = HttpUtility.UrlEncode(id);
+    var encodedApiId = HttpUtility.UrlEncode(apiId);
 
     var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"resources/api_resources/{encodedId}?");
+    urlBuilder.Append($"resources/api_resources/{encodedApiId}?");
 
     urlBuilder.Length--;
 
@@ -146,21 +146,21 @@ public class ResourcesClient : MonoCloudClientBase
   /// <summary>
   /// Gets all Api Resource Secrets
   /// </summary>
-  /// <param name="resourceId">Resource Id</param>
+  /// <param name="apiId">API Id</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>List&lt;Secret&gt;</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<List<Secret>>> GetAllApiResourceSecretsAsync(string resourceId, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<List<Secret>>> GetAllApiResourceSecretsAsync(string apiId, CancellationToken cancellationToken = default)
   { 
-    if (resourceId == null)
+    if (apiId == null)
     {
-      throw new ArgumentNullException(nameof(resourceId));
+      throw new ArgumentNullException(nameof(apiId));
     }
     
-    var encodedResourceId = HttpUtility.UrlEncode(resourceId);
+    var encodedApiId = HttpUtility.UrlEncode(apiId);
 
     var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"resources/api_resources/{encodedResourceId}/secrets?");
+    urlBuilder.Append($"resources/api_resources/{encodedApiId}/secrets?");
 
     urlBuilder.Length--;
 
@@ -180,16 +180,16 @@ public class ResourcesClient : MonoCloudClientBase
   /// <summary>
   /// Create an Api Resource Secret
   /// </summary>
-  /// <param name="resourceId">Resource Id</param>
+  /// <param name="apiId">API Id</param>
   /// <param name="createSecretRequest">Request Body</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>Secret</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<Secret>> CreateApiResourceSecretAsync(string resourceId, CreateSecretRequest createSecretRequest, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<Secret>> CreateApiResourceSecretAsync(string apiId, CreateSecretRequest createSecretRequest, CancellationToken cancellationToken = default)
   { 
-    if (resourceId == null)
+    if (apiId == null)
     {
-      throw new ArgumentNullException(nameof(resourceId));
+      throw new ArgumentNullException(nameof(apiId));
     }
     
     if (createSecretRequest == null)
@@ -197,10 +197,10 @@ public class ResourcesClient : MonoCloudClientBase
       throw new ArgumentNullException(nameof(createSecretRequest));
     }
     
-    var encodedResourceId = HttpUtility.UrlEncode(resourceId);
+    var encodedApiId = HttpUtility.UrlEncode(apiId);
 
     var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"resources/api_resources/{encodedResourceId}/secrets?");
+    urlBuilder.Append($"resources/api_resources/{encodedApiId}/secrets?");
 
     urlBuilder.Length--;
 
@@ -221,29 +221,29 @@ public class ResourcesClient : MonoCloudClientBase
   /// <summary>
   /// Find an Api Resource Secret by Id
   /// </summary>
-  /// <param name="resourceId">Resource Id</param>
   /// <param name="secretId">Secret Id</param>
+  /// <param name="apiId">API Id</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>Secret</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<Secret>> FindApiResourceSecretByIdAsync(string resourceId, string secretId, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<Secret>> FindApiResourceSecretByIdAsync(string secretId, string apiId, CancellationToken cancellationToken = default)
   { 
-    if (resourceId == null)
-    {
-      throw new ArgumentNullException(nameof(resourceId));
-    }
-    
     if (secretId == null)
     {
       throw new ArgumentNullException(nameof(secretId));
     }
     
-    var encodedResourceId = HttpUtility.UrlEncode(resourceId);
-
+    if (apiId == null)
+    {
+      throw new ArgumentNullException(nameof(apiId));
+    }
+    
     var encodedSecretId = HttpUtility.UrlEncode(secretId);
 
+    var encodedApiId = HttpUtility.UrlEncode(apiId);
+
     var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"resources/api_resources/{encodedResourceId}/secrets/{encodedSecretId}?");
+    urlBuilder.Append($"resources/api_resources/{encodedApiId}/secrets/{encodedSecretId}?");
 
     urlBuilder.Length--;
 
@@ -263,16 +263,16 @@ public class ResourcesClient : MonoCloudClientBase
   /// <summary>
   /// Delete an Api Resource Secret
   /// </summary>
-  /// <param name="resourceId">ResourceId Id</param>
+  /// <param name="apiId">API Id</param>
   /// <param name="secretId">Secret Id</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns></returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse> DeleteApiResourceSecretAsync(string resourceId, string secretId, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse> DeleteApiResourceSecretAsync(string apiId, string secretId, CancellationToken cancellationToken = default)
   { 
-    if (resourceId == null)
+    if (apiId == null)
     {
-      throw new ArgumentNullException(nameof(resourceId));
+      throw new ArgumentNullException(nameof(apiId));
     }
     
     if (secretId == null)
@@ -280,12 +280,12 @@ public class ResourcesClient : MonoCloudClientBase
       throw new ArgumentNullException(nameof(secretId));
     }
     
-    var encodedResourceId = HttpUtility.UrlEncode(resourceId);
+    var encodedApiId = HttpUtility.UrlEncode(apiId);
 
     var encodedSecretId = HttpUtility.UrlEncode(secretId);
 
     var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"resources/api_resources/{encodedResourceId}/secrets/{encodedSecretId}?");
+    urlBuilder.Append($"resources/api_resources/{encodedApiId}/secrets/{encodedSecretId}?");
 
     urlBuilder.Length--;
 
@@ -301,7 +301,7 @@ public class ResourcesClient : MonoCloudClientBase
   /// <summary>
   /// Get all the Api Scopes
   /// </summary>
-  /// <param name="resourceId">Api Resource Id</param>
+  /// <param name="apiId">API Id</param>
   /// <param name="page">Page Number</param>
   /// <param name="size">Page Size</param>
   /// <param name="filter">Value by which the resources needs to be filtered.</param>
@@ -309,17 +309,17 @@ public class ResourcesClient : MonoCloudClientBase
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>List&lt;ApiScope&gt;</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<List<ApiScope>, PageModel>> GetAllApiScopesAsync(string resourceId, int? page = 1, int? size = 10, string? filter = default, string? sort = default, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<List<ApiScope>, PageModel>> GetAllApiScopesAsync(string apiId, int? page = 1, int? size = 10, string? filter = default, string? sort = default, CancellationToken cancellationToken = default)
   { 
-    if (resourceId == null)
+    if (apiId == null)
     {
-      throw new ArgumentNullException(nameof(resourceId));
+      throw new ArgumentNullException(nameof(apiId));
     }
     
-    var encodedResourceId = HttpUtility.UrlEncode(resourceId);
+    var encodedApiId = HttpUtility.UrlEncode(apiId);
 
     var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"resources/api_resources/{encodedResourceId}/scopes?");
+    urlBuilder.Append($"resources/api_resources/{encodedApiId}/scopes?");
 
     if (page != null)
     {
@@ -359,16 +359,16 @@ public class ResourcesClient : MonoCloudClientBase
   /// <summary>
   /// Create an Api Scope
   /// </summary>
-  /// <param name="resourceId">Api Resource Id</param>
+  /// <param name="apiId">API Id</param>
   /// <param name="createApiScopeRequest">Request Body</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>ApiScope</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<ApiScope>> CreateApiScopeAsync(string resourceId, CreateApiScopeRequest createApiScopeRequest, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<ApiScope>> CreateApiScopeAsync(string apiId, CreateApiScopeRequest createApiScopeRequest, CancellationToken cancellationToken = default)
   { 
-    if (resourceId == null)
+    if (apiId == null)
     {
-      throw new ArgumentNullException(nameof(resourceId));
+      throw new ArgumentNullException(nameof(apiId));
     }
     
     if (createApiScopeRequest == null)
@@ -376,10 +376,10 @@ public class ResourcesClient : MonoCloudClientBase
       throw new ArgumentNullException(nameof(createApiScopeRequest));
     }
     
-    var encodedResourceId = HttpUtility.UrlEncode(resourceId);
+    var encodedApiId = HttpUtility.UrlEncode(apiId);
 
     var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"resources/api_resources/{encodedResourceId}/scopes?");
+    urlBuilder.Append($"resources/api_resources/{encodedApiId}/scopes?");
 
     urlBuilder.Length--;
 
@@ -400,29 +400,29 @@ public class ResourcesClient : MonoCloudClientBase
   /// <summary>
   /// Find an Api Scope by Id
   /// </summary>
-  /// <param name="id">Scope Id</param>
-  /// <param name="resourceId">Api Resource Id</param>
+  /// <param name="scopeId">Scope Id</param>
+  /// <param name="apiId">API Id</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>ApiScope</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<ApiScope>> FindApiScopeByIdAsync(string id, string resourceId, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<ApiScope>> FindApiScopeByIdAsync(string scopeId, string apiId, CancellationToken cancellationToken = default)
   { 
-    if (id == null)
+    if (scopeId == null)
     {
-      throw new ArgumentNullException(nameof(id));
+      throw new ArgumentNullException(nameof(scopeId));
     }
     
-    if (resourceId == null)
+    if (apiId == null)
     {
-      throw new ArgumentNullException(nameof(resourceId));
+      throw new ArgumentNullException(nameof(apiId));
     }
     
-    var encodedId = HttpUtility.UrlEncode(id);
+    var encodedScopeId = HttpUtility.UrlEncode(scopeId);
 
-    var encodedResourceId = HttpUtility.UrlEncode(resourceId);
+    var encodedApiId = HttpUtility.UrlEncode(apiId);
 
     var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"resources/api_resources/{encodedResourceId}/scopes/{encodedId}?");
+    urlBuilder.Append($"resources/api_resources/{encodedApiId}/scopes/{encodedScopeId}?");
 
     urlBuilder.Length--;
 
@@ -442,29 +442,29 @@ public class ResourcesClient : MonoCloudClientBase
   /// <summary>
   /// Delete an Api Scope
   /// </summary>
-  /// <param name="id">Scope Id</param>
-  /// <param name="resourceId">Api Resource Id</param>
+  /// <param name="scopeId">Scope Id</param>
+  /// <param name="apiId">API Id</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns></returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse> DeleteApiScopeAsync(string id, string resourceId, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse> DeleteApiScopeAsync(string scopeId, string apiId, CancellationToken cancellationToken = default)
   { 
-    if (id == null)
+    if (scopeId == null)
     {
-      throw new ArgumentNullException(nameof(id));
+      throw new ArgumentNullException(nameof(scopeId));
     }
     
-    if (resourceId == null)
+    if (apiId == null)
     {
-      throw new ArgumentNullException(nameof(resourceId));
+      throw new ArgumentNullException(nameof(apiId));
     }
     
-    var encodedId = HttpUtility.UrlEncode(id);
+    var encodedScopeId = HttpUtility.UrlEncode(scopeId);
 
-    var encodedResourceId = HttpUtility.UrlEncode(resourceId);
+    var encodedApiId = HttpUtility.UrlEncode(apiId);
 
     var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"resources/api_resources/{encodedResourceId}/scopes/{encodedId}?");
+    urlBuilder.Append($"resources/api_resources/{encodedApiId}/scopes/{encodedScopeId}?");
 
     urlBuilder.Length--;
 
@@ -480,22 +480,22 @@ public class ResourcesClient : MonoCloudClientBase
   /// <summary>
   /// Update an Api Scope
   /// </summary>
-  /// <param name="id">Scope Id</param>
-  /// <param name="resourceId">Api Resource Id</param>
+  /// <param name="scopeId">Scope Id</param>
+  /// <param name="apiId">API Id</param>
   /// <param name="patchApiScopeRequest">Request Body</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>ApiScope</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<ApiScope>> PatchApiScopeAsync(string id, string resourceId, PatchApiScopeRequest patchApiScopeRequest, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<ApiScope>> PatchApiScopeAsync(string scopeId, string apiId, PatchApiScopeRequest patchApiScopeRequest, CancellationToken cancellationToken = default)
   { 
-    if (id == null)
+    if (scopeId == null)
     {
-      throw new ArgumentNullException(nameof(id));
+      throw new ArgumentNullException(nameof(scopeId));
     }
     
-    if (resourceId == null)
+    if (apiId == null)
     {
-      throw new ArgumentNullException(nameof(resourceId));
+      throw new ArgumentNullException(nameof(apiId));
     }
     
     if (patchApiScopeRequest == null)
@@ -503,12 +503,12 @@ public class ResourcesClient : MonoCloudClientBase
       throw new ArgumentNullException(nameof(patchApiScopeRequest));
     }
     
-    var encodedId = HttpUtility.UrlEncode(id);
+    var encodedScopeId = HttpUtility.UrlEncode(scopeId);
 
-    var encodedResourceId = HttpUtility.UrlEncode(resourceId);
+    var encodedApiId = HttpUtility.UrlEncode(apiId);
 
     var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"resources/api_resources/{encodedResourceId}/scopes/{encodedId}?");
+    urlBuilder.Append($"resources/api_resources/{encodedApiId}/scopes/{encodedScopeId}?");
 
     urlBuilder.Length--;
 
@@ -529,7 +529,7 @@ public class ResourcesClient : MonoCloudClientBase
   /// <summary>
   /// Get all the Client Api Resource Associations
   /// </summary>
-  /// <param name="clientId">Api Resource Id</param>
+  /// <param name="clientId">Client Id</param>
   /// <param name="page">Page Number</param>
   /// <param name="size">Page Size</param>
   /// <param name="sort">Value in &#39;sort_key:sort_order&#39; format, by which results will be sorted. Sort order value can be &#39;1&#39; for ascending and &#39;-1&#39; for descending.  Acceptable sort key values are &#39;client_id&#39;, &#39;creation_time&#39; and &#39;last_updated&#39;</param>
@@ -581,24 +581,24 @@ public class ResourcesClient : MonoCloudClientBase
   /// <summary>
   /// Get all the Api Resource Client Associations
   /// </summary>
-  /// <param name="resourceId">Api Resource Id</param>
+  /// <param name="apiId">API Id</param>
   /// <param name="page">Page Number</param>
   /// <param name="size">Page Size</param>
   /// <param name="sort">Value in &#39;sort_key:sort_order&#39; format, by which results will be sorted. Sort order value can be &#39;1&#39; for ascending and &#39;-1&#39; for descending.  Acceptable sort key values are &#39;client_id&#39;, &#39;creation_time&#39; and &#39;last_updated&#39;</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>List&lt;ApiResourceClient&gt;</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<List<ApiResourceClient>, PageModel>> GetAllApiResourceClientsAsync(string resourceId, int? page = 1, int? size = 10, string? sort = default, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<List<ApiResourceClient>, PageModel>> GetAllApiResourceClientsAsync(string apiId, int? page = 1, int? size = 10, string? sort = default, CancellationToken cancellationToken = default)
   { 
-    if (resourceId == null)
+    if (apiId == null)
     {
-      throw new ArgumentNullException(nameof(resourceId));
+      throw new ArgumentNullException(nameof(apiId));
     }
     
-    var encodedResourceId = HttpUtility.UrlEncode(resourceId);
+    var encodedApiId = HttpUtility.UrlEncode(apiId);
 
     var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"resources/api_resources/{encodedResourceId}/clients?");
+    urlBuilder.Append($"resources/api_resources/{encodedApiId}/clients?");
 
     if (page != null)
     {
@@ -633,16 +633,16 @@ public class ResourcesClient : MonoCloudClientBase
   /// <summary>
   /// Find an Api Resource Client Association
   /// </summary>
-  /// <param name="resourceId">Api Resource Id</param>
+  /// <param name="apiId">API Id</param>
   /// <param name="clientId">Client Id</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>ApiResourceClient</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<ApiResourceClient>> FindApiResourceClientAsync(string resourceId, string clientId, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<ApiResourceClient>> FindApiResourceClientAsync(string apiId, string clientId, CancellationToken cancellationToken = default)
   { 
-    if (resourceId == null)
+    if (apiId == null)
     {
-      throw new ArgumentNullException(nameof(resourceId));
+      throw new ArgumentNullException(nameof(apiId));
     }
     
     if (clientId == null)
@@ -650,12 +650,12 @@ public class ResourcesClient : MonoCloudClientBase
       throw new ArgumentNullException(nameof(clientId));
     }
     
-    var encodedResourceId = HttpUtility.UrlEncode(resourceId);
+    var encodedApiId = HttpUtility.UrlEncode(apiId);
 
     var encodedClientId = HttpUtility.UrlEncode(clientId);
 
     var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"resources/api_resources/{encodedResourceId}/clients/{encodedClientId}?");
+    urlBuilder.Append($"resources/api_resources/{encodedApiId}/clients/{encodedClientId}?");
 
     urlBuilder.Length--;
 
@@ -675,17 +675,17 @@ public class ResourcesClient : MonoCloudClientBase
   /// <summary>
   /// Create an Api Resource Client Association
   /// </summary>
-  /// <param name="resourceId">Api Resource Id</param>
+  /// <param name="apiId">API Id</param>
   /// <param name="clientId">Client Id</param>
   /// <param name="createApiResourceClientRequest">Request Body</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>ApiResourceClient</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<ApiResourceClient>> CreateApiResourceClientAsync(string resourceId, string clientId, CreateApiResourceClientRequest createApiResourceClientRequest, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<ApiResourceClient>> CreateApiResourceClientAsync(string apiId, string clientId, CreateApiResourceClientRequest createApiResourceClientRequest, CancellationToken cancellationToken = default)
   { 
-    if (resourceId == null)
+    if (apiId == null)
     {
-      throw new ArgumentNullException(nameof(resourceId));
+      throw new ArgumentNullException(nameof(apiId));
     }
     
     if (clientId == null)
@@ -698,12 +698,12 @@ public class ResourcesClient : MonoCloudClientBase
       throw new ArgumentNullException(nameof(createApiResourceClientRequest));
     }
     
-    var encodedResourceId = HttpUtility.UrlEncode(resourceId);
+    var encodedApiId = HttpUtility.UrlEncode(apiId);
 
     var encodedClientId = HttpUtility.UrlEncode(clientId);
 
     var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"resources/api_resources/{encodedResourceId}/clients/{encodedClientId}?");
+    urlBuilder.Append($"resources/api_resources/{encodedApiId}/clients/{encodedClientId}?");
 
     urlBuilder.Length--;
 
@@ -724,16 +724,16 @@ public class ResourcesClient : MonoCloudClientBase
   /// <summary>
   /// Remove an Api Resource Client Association
   /// </summary>
-  /// <param name="resourceId">ResourceId Id</param>
+  /// <param name="apiId">API Id</param>
   /// <param name="clientId">Client Id</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns></returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse> RemoveApiResourceClientAsync(string resourceId, string clientId, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse> RemoveApiResourceClientAsync(string apiId, string clientId, CancellationToken cancellationToken = default)
   { 
-    if (resourceId == null)
+    if (apiId == null)
     {
-      throw new ArgumentNullException(nameof(resourceId));
+      throw new ArgumentNullException(nameof(apiId));
     }
     
     if (clientId == null)
@@ -741,12 +741,12 @@ public class ResourcesClient : MonoCloudClientBase
       throw new ArgumentNullException(nameof(clientId));
     }
     
-    var encodedResourceId = HttpUtility.UrlEncode(resourceId);
+    var encodedApiId = HttpUtility.UrlEncode(apiId);
 
     var encodedClientId = HttpUtility.UrlEncode(clientId);
 
     var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"resources/api_resources/{encodedResourceId}/clients/{encodedClientId}?");
+    urlBuilder.Append($"resources/api_resources/{encodedApiId}/clients/{encodedClientId}?");
 
     urlBuilder.Length--;
 
@@ -762,17 +762,17 @@ public class ResourcesClient : MonoCloudClientBase
   /// <summary>
   /// Update an Api Resource Client Association
   /// </summary>
-  /// <param name="resourceId">Api Resource Id</param>
+  /// <param name="apiId">API Id</param>
   /// <param name="clientId">Client Id</param>
   /// <param name="patchApiResourceClientRequest">Request Body</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>ApiResourceClient</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<ApiResourceClient>> PatchApiResourceClientAsync(string resourceId, string clientId, PatchApiResourceClientRequest patchApiResourceClientRequest, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<ApiResourceClient>> PatchApiResourceClientAsync(string apiId, string clientId, PatchApiResourceClientRequest patchApiResourceClientRequest, CancellationToken cancellationToken = default)
   { 
-    if (resourceId == null)
+    if (apiId == null)
     {
-      throw new ArgumentNullException(nameof(resourceId));
+      throw new ArgumentNullException(nameof(apiId));
     }
     
     if (clientId == null)
@@ -785,12 +785,12 @@ public class ResourcesClient : MonoCloudClientBase
       throw new ArgumentNullException(nameof(patchApiResourceClientRequest));
     }
     
-    var encodedResourceId = HttpUtility.UrlEncode(resourceId);
+    var encodedApiId = HttpUtility.UrlEncode(apiId);
 
     var encodedClientId = HttpUtility.UrlEncode(clientId);
 
     var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"resources/api_resources/{encodedResourceId}/clients/{encodedClientId}?");
+    urlBuilder.Append($"resources/api_resources/{encodedApiId}/clients/{encodedClientId}?");
 
     urlBuilder.Length--;
 
@@ -811,21 +811,21 @@ public class ResourcesClient : MonoCloudClientBase
   /// <summary>
   /// Find a Scope by Id
   /// </summary>
-  /// <param name="id">Scope Id</param>
+  /// <param name="scopeId">Scope Id</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>Scope</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<Scope>> FindScopeByIdAsync(string id, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<Scope>> FindScopeByIdAsync(string scopeId, CancellationToken cancellationToken = default)
   { 
-    if (id == null)
+    if (scopeId == null)
     {
-      throw new ArgumentNullException(nameof(id));
+      throw new ArgumentNullException(nameof(scopeId));
     }
     
-    var encodedId = HttpUtility.UrlEncode(id);
+    var encodedScopeId = HttpUtility.UrlEncode(scopeId);
 
     var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"resources/scopes/{encodedId}?");
+    urlBuilder.Append($"resources/scopes/{encodedScopeId}?");
 
     urlBuilder.Length--;
 
@@ -845,21 +845,21 @@ public class ResourcesClient : MonoCloudClientBase
   /// <summary>
   /// Delete a Scope
   /// </summary>
-  /// <param name="id">Scope Id</param>
+  /// <param name="scopeId">Scope Id</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns></returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse> DeleteScopeAsync(string id, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse> DeleteScopeAsync(string scopeId, CancellationToken cancellationToken = default)
   { 
-    if (id == null)
+    if (scopeId == null)
     {
-      throw new ArgumentNullException(nameof(id));
+      throw new ArgumentNullException(nameof(scopeId));
     }
     
-    var encodedId = HttpUtility.UrlEncode(id);
+    var encodedScopeId = HttpUtility.UrlEncode(scopeId);
 
     var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"resources/scopes/{encodedId}?");
+    urlBuilder.Append($"resources/scopes/{encodedScopeId}?");
 
     urlBuilder.Length--;
 
@@ -875,16 +875,16 @@ public class ResourcesClient : MonoCloudClientBase
   /// <summary>
   /// Update a scope
   /// </summary>
-  /// <param name="id">Scope Id</param>
+  /// <param name="scopeId">Scope Id</param>
   /// <param name="patchScopeRequest">Request Body</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>Scope</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<Scope>> PatchScopeAsync(string id, PatchScopeRequest patchScopeRequest, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<Scope>> PatchScopeAsync(string scopeId, PatchScopeRequest patchScopeRequest, CancellationToken cancellationToken = default)
   { 
-    if (id == null)
+    if (scopeId == null)
     {
-      throw new ArgumentNullException(nameof(id));
+      throw new ArgumentNullException(nameof(scopeId));
     }
     
     if (patchScopeRequest == null)
@@ -892,10 +892,10 @@ public class ResourcesClient : MonoCloudClientBase
       throw new ArgumentNullException(nameof(patchScopeRequest));
     }
     
-    var encodedId = HttpUtility.UrlEncode(id);
+    var encodedScopeId = HttpUtility.UrlEncode(scopeId);
 
     var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"resources/scopes/{encodedId}?");
+    urlBuilder.Append($"resources/scopes/{encodedScopeId}?");
 
     urlBuilder.Length--;
 
@@ -916,21 +916,21 @@ public class ResourcesClient : MonoCloudClientBase
   /// <summary>
   /// Find an Claim Resource by Id
   /// </summary>
-  /// <param name="id">Claim Resource Id</param>
+  /// <param name="claimId">Claim Id</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>ClaimResource</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<ClaimResource>> FindClaimResourceByIdAsync(string id, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<ClaimResource>> FindClaimResourceByIdAsync(string claimId, CancellationToken cancellationToken = default)
   { 
-    if (id == null)
+    if (claimId == null)
     {
-      throw new ArgumentNullException(nameof(id));
+      throw new ArgumentNullException(nameof(claimId));
     }
     
-    var encodedId = HttpUtility.UrlEncode(id);
+    var encodedClaimId = HttpUtility.UrlEncode(claimId);
 
     var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"resources/claim_resources/{encodedId}?");
+    urlBuilder.Append($"resources/claim_resources/{encodedClaimId}?");
 
     urlBuilder.Length--;
 
@@ -950,21 +950,21 @@ public class ResourcesClient : MonoCloudClientBase
   /// <summary>
   /// Delete an Claim Resource
   /// </summary>
-  /// <param name="id">Claim Resource Id</param>
+  /// <param name="claimId">Claim Id</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns></returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse> DeleteClaimResourceAsync(string id, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse> DeleteClaimResourceAsync(string claimId, CancellationToken cancellationToken = default)
   { 
-    if (id == null)
+    if (claimId == null)
     {
-      throw new ArgumentNullException(nameof(id));
+      throw new ArgumentNullException(nameof(claimId));
     }
     
-    var encodedId = HttpUtility.UrlEncode(id);
+    var encodedClaimId = HttpUtility.UrlEncode(claimId);
 
     var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"resources/claim_resources/{encodedId}?");
+    urlBuilder.Append($"resources/claim_resources/{encodedClaimId}?");
 
     urlBuilder.Length--;
 
@@ -980,16 +980,16 @@ public class ResourcesClient : MonoCloudClientBase
   /// <summary>
   /// Update an Claim Resource
   /// </summary>
-  /// <param name="id">Claim Resource Id</param>
+  /// <param name="claimId">Claim Id</param>
   /// <param name="patchClaimResourceRequest">Request Body</param>
   /// <param name="cancellationToken">The <see cref="CancellationToken"/> used to propagate notifications that the operation should be canceled.</param>
   /// <returns>ClaimResource</returns>
   /// <exception cref="MonoCloudException">A server side error occurred.</exception>
-  public Task<MonoCloudResponse<ClaimResource>> PatchClaimResourceAsync(string id, PatchClaimResourceRequest patchClaimResourceRequest, CancellationToken cancellationToken = default)
+  public Task<MonoCloudResponse<ClaimResource>> PatchClaimResourceAsync(string claimId, PatchClaimResourceRequest patchClaimResourceRequest, CancellationToken cancellationToken = default)
   { 
-    if (id == null)
+    if (claimId == null)
     {
-      throw new ArgumentNullException(nameof(id));
+      throw new ArgumentNullException(nameof(claimId));
     }
     
     if (patchClaimResourceRequest == null)
@@ -997,10 +997,10 @@ public class ResourcesClient : MonoCloudClientBase
       throw new ArgumentNullException(nameof(patchClaimResourceRequest));
     }
     
-    var encodedId = HttpUtility.UrlEncode(id);
+    var encodedClaimId = HttpUtility.UrlEncode(claimId);
 
     var urlBuilder = new StringBuilder();
-    urlBuilder.Append($"resources/claim_resources/{encodedId}?");
+    urlBuilder.Append($"resources/claim_resources/{encodedClaimId}?");
 
     urlBuilder.Length--;
 
